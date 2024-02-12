@@ -1,0 +1,42 @@
+#content {
+    background-color: gray;
+}
+
+#nav {
+    margin-top: 0;
+    font-size: 25px;
+    width: 150px;
+    float: left;
+}
+
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: left;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: gray;
+    width: 150px;
+}
+
+#footer {
+    background: #222;
+    color: #fff;
+    display: block;
+    float: left;
+    margin-left: 30%;
+}
