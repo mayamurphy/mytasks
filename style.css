@@ -58,20 +58,39 @@ img {
 
 /* actual website page css */
 #content {
-    background-color: gray;
+    display: flex;
+    border-style: solid;
 }
 
 #nav {
-    margin-top: 0;
+    display: inline-flex;
     font-size: 25px;
-    width: 150px;
-    float: left;
+    width: 130px;
+}
+
+.left {
+    margin: 5px;
+    width: 40%;
+    border-style: solid;
+    border-color: red;
+}
+
+.right {
+    margin: 5;
+    display: inline-block;
+    border-style: solid;
 }
 
 hr {
     height: 1px;
     border: none;
     background-color: lightgray;    
+}
+
+/* tasks table */
+#tasks-table th {
+    width: 150px;
+    text-align: left;
 }
 
 ol {
@@ -81,15 +100,10 @@ ol {
     overflow: hidden;
 }
 
-li {
-    float: left;
-}
-
 li a {
     display: block;
     color: black;
-    text-align: left;
-    padding: 16px;
+    padding: 10px;
     text-decoration: none;
 }
 
