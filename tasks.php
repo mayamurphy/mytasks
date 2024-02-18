@@ -1,10 +1,10 @@
 <html>
-<table id="tasks-table">
+<table class="tasks-table">
     <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Due</th>
-        <th>Color</th>
+        <th id="tt-name">Name</th>
+        <th id="tt-desc">Description</th>
+        <th id="tt-due">Due</th>
+        <th id="tt-color">Color</th>
     </tr>
     <tr>
     <!-- read rest of rows from mysql-->

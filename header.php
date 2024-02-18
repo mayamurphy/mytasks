@@ -4,6 +4,7 @@
   </head>
   <body>
     <img src="mytasks logo.png"/>
+    
     <hr>
     <div id="content">
       <div id="nav" style="border-right:1px solid lightgray;">

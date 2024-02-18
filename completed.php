@@ -1,6 +1,10 @@
 <?php require_once "header.php"; ?>
 <title>Completed ✅</title>
- <div id="completed">
-    
- </div>
+<div class="left">
+    <div id="completed">
+        <div class="task-list">
+            <?php require_once "tasks.php" ?>
+        </div>
+    </div>
+</div>
 <?php require_once "footer.php"; ?>

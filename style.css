@@ -53,13 +53,15 @@
 /* logo */
 img {
     position: relative;
-    height: 50px;
+    height: 10%;
 }
 
 /* actual website page css */
 #content {
     display: flex;
-    border-style: solid;
+    /* border-style: solid; */
+    /* border-color: blue; */
+    height: 80%;
 }
 
 #nav {
@@ -69,16 +71,39 @@ img {
 }
 
 .left {
-    margin: 5px;
-    width: 40%;
+    margin-left: 2;
+    width: 60%;
+    padding: 10px;
     border-style: solid;
     border-color: red;
+    border-radius: 20px;
 }
 
 .right {
-    margin: 5;
-    display: inline-block;
+    margin-left: 2;
+    width: 30%;
+    /* border-style: solid; */
+}
+
+#progress-bar-container {
+    padding-left: 10px;
+    height: 20%;
     border-style: solid;
+    border-radius: 20px;
+    border-color: pink;
+}
+
+#calendar-container {
+    padding-left: 10px;
+    height: 76.5%;
+    font-size: 25px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: purple;
+}
+
+#id {
+    background-color: gray;
 }
 
 hr {
@@ -88,9 +113,28 @@ hr {
 }
 
 /* tasks table */
-#tasks-table th {
-    width: 150px;
+table {
+    overflow: hidden;
+    width: 100%;
     text-align: left;
+    border-collapse: collapse;
+    background-color: #bfbfbf;
+}
+
+#tt-name {
+    width: 25%;
+}
+
+#tt-desc {
+    width: 60%;
+}
+
+#tt-due {
+    width: 10%;
+}
+
+#tt-color {
+    width: 5%;
 }
 
 ol {
@@ -104,14 +148,15 @@ li a {
     display: block;
     color: black;
     padding: 10px;
+    text-align: right;
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: gray;
-    width: 150px;
+    background-color: #bfbfbf;
 }
 
 #footer {
-    display: block;
+    /* width: 1000px; */
+    height: 5%;
 }
