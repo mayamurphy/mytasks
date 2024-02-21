@@ -9,7 +9,8 @@
     <div class="login-signup-page">
         <div id="login">
             <h1>Log in</h1>
-            <form method="post" action="login_handler.php">
+            <!-- <form method="post" action="login_handler.php"> -->
+            <form method="post" action="todo.php">
                 <div>
                     <label for="login-un">Username:</label>
                     <input type="text" placeholder="Enter Username" id="login-un" name="un">
@@ -26,7 +27,8 @@
         <div style="width: 5px"></div>
         <div id="signup">
             <h1>Create Account</h1>
-            <form method="post" action="signup_handler.php">
+            <!-- <form method="post" action="signup_handler.php"> -->
+            <form method="post" action="todo.php">
                     <div>
                         <label for="email">E-Mail:</label>
                         <input type="text" placeholder="Enter E-Mail" id="email" name="email">
