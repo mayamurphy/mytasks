@@ -49,4 +49,7 @@
                 </form>
         </div>
     </div>
-<?php require_once "footer.php"; ?>
+    <hr>
+    <span id="footer">Contact: Maya Murphy</span>
+  </body>
+</html>
