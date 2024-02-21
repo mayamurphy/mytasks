@@ -51,7 +51,4 @@
                 </form>
         </div>
     </div>
-    <hr>
-    <span id="footer">Contact: Maya Murphy</span>
-  </body>
-</html>
+    <?php require_once "footer.php"; ?>

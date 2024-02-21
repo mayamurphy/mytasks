@@ -11,5 +11,5 @@
         </div>
     </div>
 </div>
-  
+<?php require_once "progress_bar_and_calendar.php"; ?>
 <?php require_once "footer.php"; ?>
