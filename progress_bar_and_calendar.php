@@ -3,7 +3,7 @@
         <h3>Today's Progress:</h3>
         <div id="progress-bar"></div>
     </div>
-    <div style="height:1%"></div>
+    <div id="right-pane-separator"></div>
     <div id="calendar-container"> 
         <h3>[Month]</h3>
         <div id="calendar"></div>

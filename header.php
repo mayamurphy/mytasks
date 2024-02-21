@@ -1,16 +1,8 @@
 <html>
   <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <img src="mytasks logo.png"/>
-    
+    <img src="images/mytasks logo.png"/>
+    <link rel="icon" type="image/png" href="images/mytasks.png"/>
     <hr>
-    <div id="content">
-      <div id="nav" style="border-right:1px solid lightgray;">
-        <ol>
-          <li><a href="todo.php">To Do</a></li>
-          <li><a href="completed.php">Completed</a></li>
-          <li><a href="settings.php">Settings</a></li>
-        </ol>
-      </div>

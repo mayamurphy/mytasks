@@ -1,11 +1,7 @@
-<html>
+<?php require_once "header.php"?>
 <head>
-    <link rel="stylesheet" href="style.css">
     <title>Log in | Sign Up</title>
 </head>
-<body>
-    <img src="mytasks logo.png"/>
-    <hr>
     <div class="login-signup-page">
         <div id="login">
             <h1>Log in</h1>
@@ -24,7 +20,7 @@
                 </div>
             </form>
         </div>
-        <div style="width: 5px"></div>
+        <div id="login-signup-separator"></div>
         <div id="signup">
             <h1>Create Account</h1>
             <!-- <form method="post" action="signup_handler.php"> -->
@@ -51,4 +47,4 @@
                 </form>
         </div>
     </div>
-    <?php require_once "footer.php"; ?>
+    <?php require_once "footer.php" ?>

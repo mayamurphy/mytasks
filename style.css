@@ -12,6 +12,10 @@
     border-radius: 30px;
 }
 
+#login-signup-separator {
+    width: 5px;
+}
+
 #login h1, #signup h1 {
     padding-left: 15%;
 }
@@ -68,6 +72,7 @@ img {
     display: inline-flex;
     font-size: 25px;
     width: 130px;
+    border-right: 1px solid lightgray;
 }
 
 .left {
@@ -91,6 +96,10 @@ img {
     border-style: solid;
     border-radius: 20px;
     border-color: pink;
+}
+
+#right-pane-separator {
+    height: 1%;
 }
 
 #calendar-container {
