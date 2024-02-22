@@ -1,7 +1,11 @@
-<?php require_once "header.php"?>
+<html>
 <head>
+    <link rel="stylesheet" href="style.css"/>
     <title>Log in | Sign Up</title>
 </head>
+<body id="login-signup-body">
+    <img src="images/mytasks logo.png"/>
+    <hr>
     <div class="login-signup-page">
         <div id="login">
             <h1>Log in</h1>

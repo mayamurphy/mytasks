@@ -3,6 +3,18 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <img src="images/mytasks logo.png"/>
-    <link rel="icon" type="image/png" href="images/mytasks.png"/>
-    <hr>
+    <div id="header">
+      <img src="images/mytasks logo.png"/>
+      <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>
+      <label for="account">username </label>
+        <div id="user-pfp-and-menu">
+          <img src="images/default_pfp.png">
+          <select name="menu-options" id="menu-options">
+            <option></option>
+            <option><a href="Settings.php">Account</option>
+            <option>sign out</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+    </div>
