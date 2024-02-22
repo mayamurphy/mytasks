@@ -63,8 +63,6 @@ img {
 /* actual website page css */
 #content {
     display: flex;
-    /* border-style: solid; */
-    /* border-color: blue; */
     height: 80%;
 }
 
@@ -75,75 +73,8 @@ img {
     border-right: 1px solid lightgray;
 }
 
-.left {
-    margin-left: 2;
-    width: 60%;
-    padding: 10px;
-    border-style: solid;
-    border-color: red;
-    border-radius: 20px;
-}
-
-.right {
-    margin-left: 2;
-    width: 30%;
-    /* border-style: solid; */
-}
-
-#progress-bar-container {
-    padding-left: 10px;
-    height: 20%;
-    border-style: solid;
-    border-radius: 20px;
-    border-color: pink;
-}
-
-#right-pane-separator {
-    height: 1%;
-}
-
-#calendar-container {
-    padding-left: 10px;
-    height: 76.5%;
-    font-size: 25px;
-    border-style: solid;
-    border-radius: 20px;
-    border-color: purple;
-}
-
-#id {
-    background-color: gray;
-}
-
-hr {
-    height: 1px;
-    border: none;
-    background-color: lightgray;    
-}
-
-/* tasks table */
-table {
-    overflow: hidden;
-    width: 100%;
-    text-align: left;
-    border-collapse: collapse;
-    background-color: #bfbfbf;
-}
-
-#tt-name {
-    width: 25%;
-}
-
-#tt-desc {
-    width: 60%;
-}
-
-#tt-due {
-    width: 10%;
-}
-
-#tt-color {
-    width: 5%;
+#curr-page {
+    background-color: lightskyblue;
 }
 
 ol {
@@ -163,6 +94,191 @@ li a {
 
 li a:hover {
     background-color: #bfbfbf;
+}
+
+.left {
+    margin-left: 2;
+    width: 60%;
+    padding: 10px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 20px;
+}
+
+.right {
+    margin-left: 2;
+    width: 30%;
+}
+
+#progress-bar-container {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 20%;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: pink;
+}
+
+#progress-bar {
+    width: 100%;
+    background-color: lightgray;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+    border-radius: 20px;
+    border-style: hidden;
+}
+
+#progress {
+    width: 100%;
+    height: 30px;
+    background-color: green;
+    border-radius: 20px;
+    border-style: hidden;
+}
+
+#right-pane-separator {
+    height: 1%;
+}
+
+#calendar-container {
+    padding-left: 10px;
+    height: 76.5%;
+    font-size: 30px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: purple;
+}
+
+#calendar-container h3 {
+    height: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+iframe {
+    padding: 0;
+    display: inline-block;
+    border: none;
+    height: 75%;
+    width: 98%;
+    scroll-behavior: none;
+}
+
+hr {
+    height: 1px;
+    border: none;
+    background-color: lightgray;    
+}
+
+/* todo page */
+button {
+    margin-top: 5px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    background-color: green;
+    color: white;
+    border-color: green;
+    text-align: center;
+}
+
+/* tasks table */
+table {
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.tasks-table tr {
+    border-style: solid;
+    border-width: 2px;
+    height: 20px;
+}
+
+#tt-name {
+    width: 25%;
+    background-color: #bfbfbf;
+}
+
+#tt-desc {
+    width: 45%;
+    background-color: #bfbfbf;
+}
+
+#tt-due {
+    width: 12%;
+    background-color: #bfbfbf;
+}
+
+#tt-color {
+    width: 8%;
+    background-color: #bfbfbf;
+}
+
+#tt-status {
+    width: 15%;
+    background-color: #bfbfbf;
+}
+
+/* settings page */
+.settings {
+    text-align: center;
+    width: 100%;
+}
+
+.settings h1 {
+    font-size: 40px;
+}
+
+#profile-image {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+}
+
+.settings img {
+    height: 150px;
+    width: 150px;
+}
+
+#user-info {
+    padding: 0 40% 0 25%;
+}
+
+.settings label, #un-text {
+    display: inline-block;
+    text-align: right;
+    padding: 2px;
+    width: 250px;
+}
+
+/* settings button */
+.settings #submit-button {
+    padding-top: 2%;
+    padding-left: 10%;
+}
+
+.settings input[type=submit] {
+    background-color: #abbdce;
+    border-color: black;
+    border-radius: 5px;
+    padding: 5 10 5 10;
+    margin: auto;
+    cursor: pointer;
+}
+
+.settings input[type=submit]:hover {
+    background-color: #04aa0c;
+    border-color: black;
+    border-radius: 5px;
+    padding: 5 10 5 10;
+    margin: auto;
+    cursor: pointer;
 }
 
 #footer {
