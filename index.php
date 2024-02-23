@@ -5,6 +5,7 @@
 </head>
 <body id="login-signup-body">
     <img src="images/mytasks logo.png"/>
+    <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>
     <hr>
     <div class="login-signup-page">
         <div id="login">
