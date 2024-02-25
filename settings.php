@@ -28,7 +28,7 @@
             <div>
                 <label for="email">E-Mail:</label>
                 <!-- update placeholder to show user's email -->
-                <input type="text" placeholder="Enter E-Mail" id="email" name="email">
+                <input type="email" placeholder="Enter E-Mail" id="email" name="email">
             </div>
             <div>
                 <label for="old-pw">Old Password:</label>

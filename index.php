@@ -29,8 +29,8 @@
             <h1>Create Account</h1>
             <form method="post" action="signup_handler.php">
                     <div>
-                        <label for="email">E-Mail:</label>
-                        <input type="text" placeholder="Enter E-Mail" id="email" name="email">
+                        <label for="signup-email">E-Mail:</label>
+                        <input type="email" placeholder="Enter E-Mail" id="signup-email" name="email">
                     </div>
                     <div>
                         <label for="signup-un">Username:</label>
@@ -42,7 +42,7 @@
                     </div>
                     <div>
                         <label for="signup-reenter-pw">Re-enter Password:</label>
-                        <input type="password" placeholder="Re-enter Password" id="signup-reenter-pw" name="pw">
+                        <input type="password" placeholder="Re-enter Password" id="signup-reenter-pw" name="signup-reenter-pw">
                     </div>
                     <div id="submit-button">
                         <input type="submit" value="Sign Up!">

@@ -197,7 +197,7 @@ hr {
 }
 
 /* todo page */
-button {
+.task-list button {
     margin-top: 5px;
     border-radius: 100%;
     height: 30px;
@@ -245,6 +245,26 @@ table {
 #tt-status {
     width: 15%;
     background-color: #bfbfbf;
+}
+
+#add-task-form #task_status input[type=text] {
+    display: none;
+}
+
+#add-task-form {
+    display: none;
+    height: 20%;
+    width: 100%;
+}
+
+#add-task-button {
+    border-radius: 0;
+    width: 80px;
+}
+
+#close-task-button {
+    border-radius: 0;
+    width: 50px;
 }
 
 /* settings page */
