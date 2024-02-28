@@ -1,18 +1,22 @@
 <?php
+    require_once 'KLogger.php';
 
-  class Dao {
-
-    public $filename;
+    class Dao {
 
     private $host = "localhost";
     private $db = "mytasks";
     private $user = "root";
     private $pass = "";
+    protected $logger;
 
     public function getConnection () {
-    return
-      new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
-          $this->pass);
+        return
+        new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
+            $this->pass);
+    }
+
+    public function __construct() {
+        $this->logger = new KLogger ( "log.txt" , KLogger::WARN );
     }
 
     /* user stuff */
