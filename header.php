@@ -10,7 +10,7 @@
         <img src="images/Default_pfp.png" alt="">
         <div id="dropdown-content">
           <a href="settings.php">Settings</a>
-          <a href="">Log out</a>
+          <a href="index.php">Log out</a>
         </div>
       </div>
     </div>

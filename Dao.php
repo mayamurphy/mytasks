@@ -32,22 +32,30 @@
         $q->execute();
     }
 
-    public function getUser($username) {
+    public function usernameExists($username) {
         $conn = $this->getConnection();
-        return $conn->query("SELECT * FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
+        $res = $conn->query("SELECT password FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+
+    public function getUserPassword($username) {
+        $conn = $this->getConnection();
+        return $conn->query("SELECT password FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /* task stuff */
     public function getTodoTasks() {
         $conn = $this->getConnection();
-        return $conn->query("SELECT task_name, task_desc, task_date, task_color, task_status 
+        // return $conn->query("SELECT task_name, task_desc, task_date, task_color, task_status 
+        return $conn->query("SELECT *
                             FROM tasks 
                             WHERE task_status !='Completed'")->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getCompletedTasks() {
         $conn = $this->getConnection();
-        return $conn->query("SELECT task_name, task_desc, task_date, task_color, task_status 
+        // return $conn->query("SELECT task_name, task_desc, task_date, task_color, task_status 
+        return $conn->query("SELECT *
                             FROM tasks 
                             WHERE task_status =='Completed'")->fetchAll(PDO::FETCH_ASSOC);
     }

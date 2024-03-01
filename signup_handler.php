@@ -8,6 +8,9 @@
 
     $dao = new Dao();
     // check if username is unique
+    if (usernameExists($username) == 1) {
+
+    }
     
     // if ($password !== $re-enter-password) { // check if pw are the same
         // re-dir to "passwords don't match page"
@@ -15,7 +18,7 @@
     // }
 
     $dao->addUser($username, $email, $password);
-    // $dao->getUser($username);
+    // log user in
 
     header('Location: todo.php');
     exit;
