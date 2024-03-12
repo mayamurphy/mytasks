@@ -1,7 +1,8 @@
 <!-- check login creds & redirect to todo.php -->
 <?php
     require_once 'Dao.php';
-
+    session_start();
+    
     $username = $_POST['un'];
     $password = $_POST['pw'];
 
