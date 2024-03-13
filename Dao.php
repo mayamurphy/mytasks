@@ -34,16 +34,18 @@
 
     public function usernameExists($username) {
         $conn = $this->getConnection();
-        $res = $conn->query("SELECT password FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
-        
+        // $res = $conn->query("SELECT password FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
+        $res = $conn->query("SELECT password FROM users WHERE username = {$username}")->fetchAll(PDO::FETCH_ASSOC);
+        return $res ? true : false;
     }
 
     public function getUserPassword($username) {
         $conn = $this->getConnection();
-        return $conn->query("SELECT password FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
+        // return $conn->query("SELECT password FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
+        return $conn->query("SELECT password FROM users WHERE username = {$username}")->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    /* task stuff */
+    /* get tasks */
     public function getTodoTasks() {
         $conn = $this->getConnection();
         // return $conn->query("SELECT task_name, task_desc, task_date, task_color, task_status 
@@ -58,6 +60,51 @@
         return $conn->query("SELECT *
                             FROM tasks 
                             WHERE task_status =='Completed'")->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /* update tasks */
+    public function updateTaskName($task_id, $new_task_name) {
+        $conn = $this->getConnection();
+        $saveQuery = "";
+        
+        $q = $conn->prepare($saveQuery);
+        $q->execute();
+    }
+
+    public function updateTaskDesc($task_id, $new_task_desc) {
+        $conn = $this->getConnection();
+        $saveQuery = "";
+        
+        $q = $conn->prepare($saveQuery);
+        $q->execute();
+    
+    }
+
+    public function updateTaskDueDate($task_id, $new_task_due_date) {
+        $conn = $this->getConnection();
+        $saveQuery = "";
+        
+        $q = $conn->prepare($saveQuery);
+        $q->execute();
+    
+    }
+
+    public function updateTaskColor($task_id, $new_task_color) {
+        $conn = $this->getConnection();
+        $saveQuery = "";
+        
+        $q = $conn->prepare($saveQuery);
+        $q->execute();
+
+    }
+
+    public function updateTaskProgress($task_id, $new_task_progress) {
+        $conn = $this->getConnection();
+        $saveQuery = "";
+        
+        $q = $conn->prepare($saveQuery);
+        $q->execute();
+
     }
 
     public function saveTask($task_name, $task_desc, $task_due, $task_color, $task_status) {
