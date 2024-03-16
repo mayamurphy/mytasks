@@ -58,6 +58,21 @@
     cursor: pointer;
 }
 
+#error-messages {
+    left: 50%;
+    border-style: solid;
+    border-color: black;
+}
+
+.message {
+    margin-top: 5px;
+    margin-left: 5px;
+    color: red;
+    /* background-color: black;  */
+    padding: 5 10;
+    width: 500px;
+}
+
 /* logo */
 #header {
     height: 10%;

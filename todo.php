@@ -1,4 +1,12 @@
-<?php require_once "header.php"; ?>
+<?php 
+    if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+    } 
+    else {
+        header("Location: index.php");
+        exit();
+    }
+    require_once "header.php"; 
+?>
 <html>
 <head>
     <link rel="stylesheet" href="style.css"/>

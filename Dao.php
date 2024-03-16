@@ -16,7 +16,7 @@
     }
 
     public function __construct() {
-        $this->logger = new KLogger ( "log.txt" , KLogger::WARN );
+        $this->logger = new KLogger ( "log.txt" , KLogger::DEBUG );
     }
 
     /* user stuff */
@@ -34,15 +34,15 @@
 
     public function usernameExists($username) {
         $conn = $this->getConnection();
-        // $res = $conn->query("SELECT password FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
-        $res = $conn->query("SELECT password FROM users WHERE username = {$username}")->fetchAll(PDO::FETCH_ASSOC);
+        // $res = $conn->query("SELECT username FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
+        $res = $conn->query("SELECT username FROM users WHERE username = '{$username};'")->fetchAll(PDO::FETCH_ASSOC);
         return $res ? true : false;
     }
 
     public function getUserPassword($username) {
         $conn = $this->getConnection();
         // return $conn->query("SELECT password FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
-        return $conn->query("SELECT password FROM users WHERE username = {$username}")->fetchAll(PDO::FETCH_ASSOC);
+        return $conn->query("SELECT password FROM users WHERE username = {$username};")->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /* get tasks */
