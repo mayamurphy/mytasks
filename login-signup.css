@@ -1,0 +1,156 @@
+/* * {
+    border-style: solid;
+    border-color: red;
+} */
+
+html, body, .login-signup-body,
+a, input {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Oxygen Mono", monospace;
+}
+
+html, body {
+    background-color: #fbdbe6;
+}
+
+.header {
+    height: 9%;
+    margin: 0;
+}
+
+.header img {
+    height: calc(100% - 1px);
+}
+
+hr {
+    height: 1px;
+    margin: 0;
+    border: none;
+
+    background-color: lightgray;  
+}
+
+.content {
+    display: flex;
+    height: 85%;
+    margin: 0;
+}
+
+.left, .right {
+    height: 100%;
+    width: 49.5%;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.error-messages {
+    min-height: 20%;
+}
+
+.login-form, .signup-form {
+    height: 70%;
+}
+
+.login-form form, .signup-form form {
+    padding: 30px;
+    text-align: center;
+}
+
+.login-form label,
+.signup-form label {
+    display: inline-block;
+    padding: 5px;
+    text-align: right;
+    width: 100px;
+}
+
+.content #submit-button {
+    padding: 10px 0px 0px 50px;
+}
+
+.signup-redir button a,
+.login-redir-button a {
+    text-decoration: none;
+    color: black;
+}
+
+.content input[type=submit],
+.signup-redir button,
+.login-redir button {
+    background-color: #abbdce;
+    border-color: black;
+    border-radius: 5px;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.content input[type=submit]:hover,
+.signup-redir button:hover,
+.login-redir button:hover {
+    background-color: #04aa0c;
+    border-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#vert-div {
+    height: calc(95% - 5px);
+    width: 2px;
+    margin-top: 20px;
+    background-color: lightgray;
+}
+
+.login, .signup {
+    height: 60%;
+    width: 60%;
+    margin-top: 15%;
+    margin-left: 20%;
+    padding-top: 5%;
+    border-radius: 40px;
+}
+
+.login input, .signup input {
+    background-color: #fafafa;
+}
+
+.signup-redir, .login-redir {
+    height: 75%;
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 20%;
+    border-radius: 40px;
+}
+
+.signup-redir h1, .login-redir h1 {
+    padding-top: 45%;
+}
+
+.signup-redir-button, .login-redir-button {
+    margin-left: 45%;
+    padding-top: 20px;
+}
+
+#error-messages {
+    left: 50%;
+    border-style: solid;
+    border-color: black;
+}
+
+.message {
+    margin-top: 5px;
+    margin-left: 5px;
+    color: red;
+    /* background-color: black;  */
+    padding: 5 10;
+    width: 500px;
+}
+
+.footer {
+    height: 5%;
+}
