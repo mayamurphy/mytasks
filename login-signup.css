@@ -49,7 +49,7 @@ h1 {
 }
 
 .error-messages {
-    min-height: 20%;
+    height: 20%;
 }
 
 .login-form, .signup-form {
@@ -136,19 +136,13 @@ h1 {
     padding-top: 20px;
 }
 
-#error-messages {
-    left: 50%;
-    border-style: solid;
-    border-color: black;
+.error-messages {
+    padding-left: 55px;
 }
 
 .message {
-    margin-top: 5px;
-    margin-left: 5px;
     color: red;
-    /* background-color: black;  */
-    padding: 5 10;
-    width: 500px;
+    padding: 5px 0 0 50px;
 }
 
 .footer {

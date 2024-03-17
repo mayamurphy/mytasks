@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+    session_start();
+    require_once "Dao.php";
+?>
 <html>
 <head>
     <link rel="stylesheet" href="login-signup.css"/>
@@ -13,18 +17,18 @@
     <div class="content">
         <div class="left">
             <div class="login">
-                <div class="error-messages">
-                    <?php
-                        if (isset($_SESSION['messages'])) {
-                            foreach ($_SESSION['messages'] as $message) {
-                                echo "<div class='message' id='" . $_SESSION['sentiment'] . "'>{$message}</div>";
-                            }
-                            unset($_SESSION['messages']);
-                        }
-                    ?>
-                </div>
                 <div class="login-form">
                     <h1>Log in</h1>
+                    <div class="error-messages">
+                        <?php
+                            if (isset($_SESSION['messages'])) {
+                                foreach ($_SESSION['messages'] as $message) {
+                                    echo "<div class='message'>{$message}</div>";
+                                }
+                                unset($_SESSION['messages']);
+                            }
+                        ?>
+                    </div>
                     <form method="post" action="login_handler.php">
                         <div>
                             <label for="login-un">Username:</label>

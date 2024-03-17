@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+    session_start();
+    require_once "Dao.php";
+?>
 <html>
 <head>
     <link rel="stylesheet" href="login-signup.css"/>
@@ -28,7 +32,7 @@
                         <?php
                             if (isset($_SESSION['messages'])) {
                                 foreach ($_SESSION['messages'] as $message) {
-                                    echo "<div class='message' id='" . $_SESSION['sentiment'] . "'>{$message}</div>";
+                                    echo "<div class='message'>{$message}</div>";
                                 }
                                 unset($_SESSION['messages']);
                             }
@@ -37,15 +41,15 @@
                     <form method="post" action="signup_handler.php">
                         <div>
                             <label for="signup-email">E-Mail:</label>
-                            <input type="email" placeholder="Enter E-Mail" id="signup-email" name="email">
+                            <input type="email" placeholder="Enter E-Mail" id="signup-email" name="signup-email">
                         </div>
                         <div>
                             <label for="signup-un">Username:</label>
-                            <input type="text" placeholder="Enter Username" id="signup-un" name="un">
+                            <input type="text" placeholder="Enter Username" id="signup-un" name="signup-un">
                         </div>
                         <div>
                             <label for="signup-pw">Password:</label>
-                            <input type="password" placeholder="Enter Password" id="signup-pw" name="pw">
+                            <input type="password" placeholder="Enter Password" id="signup-pw" name="signup-pw">
                         </div>
                         <div>
                             <label for="signup-reenter-pw">Re-enter Password:</label>

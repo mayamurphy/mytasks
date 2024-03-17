@@ -7,5 +7,3 @@
         header("Location: login.php");
         exit();
     }
-    require_once "header.php"; 
-?>
