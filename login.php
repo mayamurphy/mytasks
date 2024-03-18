@@ -12,8 +12,8 @@
 <body class="login-signup-body">
     <div class="header">
         <img src="images/mytasks logo.png"/>
+        <hr>
     </div>
-    <hr>
     <div class="content">
         <div class="left">
             <div class="login">

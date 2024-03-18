@@ -1,5 +1,7 @@
     </div>
-    <hr>
-    <span id="footer">Contact: Maya Murphy</span>
+    <div class="footer">
+      <hr>
+      <span>Contact: Maya Murphy</span>
+    </div>
   </body>
 </html>
