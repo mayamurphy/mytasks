@@ -1,6 +1,6 @@
 <?php 
     if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-        header("Loaction: todo.php");
+        header("Location: todo.php");
         exit();
     } 
     else {

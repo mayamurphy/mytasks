@@ -1,0 +1,125 @@
+/* * {
+    border-style: solid;
+    border-color: red;
+} */
+
+* {
+    margin: 0;
+    font-family: "Oxygen Mono", monospace;
+}
+
+html, body {
+    height: 100%;
+    padding: 0;
+    background-color: #d9eaf7;
+}
+
+.header {
+    display: flex;
+    height: 100px;
+}
+
+.header-logo {
+    width: 25%;
+}
+
+.header-logo img {
+    height: 100%;
+}
+
+.welcome-username {
+    height: 100%;
+    width: 70%;
+}
+
+.user-dropdown {
+    height: 100%;
+    width: 90px;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.user-dropdown img {
+    height: 90px;
+    width: 90px;
+    
+    border-style: solid;
+    border-radius: 100%;
+    border-width: 1px;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    width: 90px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding-left: 5px;
+    
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 40px;
+}
+
+.dropdown-content a:hover {
+    background-color: #6082B6;
+}
+
+.content {
+    display: inline-flex;
+    height: calc(100% - 165px);
+}
+
+.nav-bar {
+    display: inline-flex;
+    height: 100%;
+    width: 150px;
+    
+    font-size: 25px;
+    border-right: 1px solid;
+    margin-left: 2px;
+}
+
+.nav-bar ol {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 5px;
+}
+
+.nav-bar a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    margin-bottom: 5px;
+
+    text-align: right;
+    text-decoration: none;
+
+    border-style: solid;
+    border-radius: 40px;
+    border-width: 1px;
+}
+
+.nav-bar a:hover {
+    background-color: #6082B6;
+}
+
+#curr-page {
+    background-color: #6082B6;
+    border-style: solid;
+    border-radius: 40px;
+    border-width: 0;
+}
+
+.footer {
+    height: 60px;
+}

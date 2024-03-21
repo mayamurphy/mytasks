@@ -39,6 +39,7 @@
     }
     else {
         $_SESSION['authenticated'] = "authenticated";
+        $_SESSION['username'] = $username;
         header('Location: todo.php');
         exit();
     }

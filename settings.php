@@ -1,6 +1,6 @@
 <?php require_once "header.php"; ?>
 <head>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="settings.css"/>
     <title>Settings</title>
 </head>
 <div id="content">
