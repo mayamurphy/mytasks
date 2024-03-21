@@ -9,14 +9,18 @@
     $messages = array();
 
     $dao = new Dao();
-    $username_exists = $dao->usernameExists($username);
-
+    $username_exists = false;
+    
     // verify username & password
     // No username entered
-    if (0 == strlen($username)) {
+    if ($username === "" || 0 == strlen($username)) {
         $messages[] = "Please enter a username.";
     }
-    else if (!$username_exists || $dao->getUserPassword($username)['password'] !== $password) {
+    else {
+        $username_exists = $dao->usernameExists($username);
+    } 
+    
+    if (!$username_exists || $dao->getUserPassword($username)['password'] !== $password) {
         // notify user that username-password combo don't match
         $messages[] = "Invalid username or password.";
     }

@@ -54,19 +54,28 @@ h1 {
 
 .login-form form, .signup-form form {
     padding: 30px;
+    padding-left: 5px;
     text-align: center;
 }
 
 .login-form label,
 .signup-form label {
     display: inline-block;
-    padding: 5px;
-    text-align: right;
     width: 100px;
+    padding: 8px;
+    text-align: right;
+    font-size: 16px;
+}
+
+.login-form input, .signup-form input {
+    height: 2em;
+    width: 45%;
+    padding-left: 5px;
+    border-radius: 40px;
 }
 
 .content #submit-button {
-    padding: 10px 0px 0px 50px;
+    padding: 10px 0px 0px 45px;
 }
 
 .signup-redir button a,
@@ -80,7 +89,7 @@ h1 {
 .login-redir button {
     background-color: #abbdce;
     border-color: black;
-    border-radius: 5px;
+    border-radius: 40px;
     height: 40px;
     width: 80px;
     cursor: pointer;
@@ -89,9 +98,9 @@ h1 {
 .content input[type=submit]:hover,
 .signup-redir button:hover,
 .login-redir button:hover {
-    background-color: #04aa0c;
+    background-color: #0BDA51;
     border-color: black;
-    border-radius: 5px;
+    border-radius: 40px;
     cursor: pointer;
 }
 
@@ -128,17 +137,17 @@ h1 {
 }
 
 .signup-redir-button, .login-redir-button {
-    margin-left: 33%;
+    padding-left: 40%;
     padding-top: 20px;
 }
 
 .error-messages {
-    padding-left: 55px;
+    padding-top: 30px;
 }
 
 .message {
     color: red;
-    padding: 5px 0 0 50px;
+    text-align: center;
 }
 
 .footer {
