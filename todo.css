@@ -30,6 +30,14 @@ html, body {
 .welcome-username {
     height: 100%;
     width: 70%;
+
+    font-weight: bold;
+    font-size: 30px;
+
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 25px;
 }
 
 .user-dropdown {
@@ -54,16 +62,16 @@ html, body {
 
 .dropdown-content {
     display: none;
+    position: absolute;
     z-index: 1;
 }
 
 .dropdown-content a {
     display: block;
-    width: 90px;
     text-decoration: none;
     background-color: white;
     color: black;
-    padding-left: 5px;
+    padding: 0 6px 0 6px;
     
     border-width: 1px;
     border-style: solid;
@@ -77,6 +85,7 @@ html, body {
 .content {
     display: inline-flex;
     height: calc(100% - 165px);
+    width: 100%;
 }
 
 .nav-bar {
@@ -93,6 +102,7 @@ html, body {
     list-style-type: none;
     padding: 0;
     padding-top: 5px;
+    padding-right: 5px;
 }
 
 .nav-bar a {
@@ -118,6 +128,78 @@ html, body {
     border-style: solid;
     border-radius: 40px;
     border-width: 0;
+}
+
+.tasks {
+    width: 60%;
+    margin: 5px;
+    padding: 5px;
+
+
+    border-style: solid;
+    border-color: red;
+}
+
+.progress-bar-and-cal {
+    width: 40%;
+    margin: 5px;
+    padding: 5px;
+
+
+
+    border-style: solid;
+    border-color: red;
+}
+
+.progress-bar-container {
+    height: 10%;
+    margin: 5px;
+    padding: 5px;
+
+    background-color: #6082B6;
+    border-radius: 10px;
+    
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+}
+
+.progress-bar {
+    height: 30px;
+    width: calc(100% - 10px);
+    margin: 5px;
+    background-color: #adadad;
+    border-radius: 50px;
+    border-style: none;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+
+    background-color: #09bb46;
+    border-radius: 50px;
+    border-style: none;
+}
+
+.calendar {
+    height: 75%;
+    margin: 5px;
+    margin-top: 10px;
+
+
+    background-color: #6082B6;
+    border-radius: 10px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+}
+
+.calendar h1 {
+    padding-left: 10px;
+    padding-top: 5px;
 }
 
 .footer {

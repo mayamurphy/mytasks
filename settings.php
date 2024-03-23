@@ -8,7 +8,6 @@
     <ol>
         <li><a href="todo.php">To Do</a></li>
         <li><a href="completed.php">Completed</a></li>
-        <li id="curr-page"><a href="settings.php">Settings</a></li>
     </ol>
 </div>
 <div class="settings">

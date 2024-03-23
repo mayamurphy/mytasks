@@ -19,15 +19,15 @@
     else {
         $username_exists = $dao->usernameExists($username);
     } 
-    
-    if (!$username_exists || $dao->getUserPassword($username)['password'] !== $password) {
-        // notify user that username-password combo don't match
-        $messages[] = "Invalid username or password.";
-    }
 
     // No password entered
     if (0 == strlen($password)) {
         $messages[] = "Please enter a password.";
+    }
+
+    if (!$username_exists || !$dao->validUserPassword($username, $password)) {
+        // notify user that username-password combo don't match
+        $messages[] = "Invalid username or password.";
     }
 
     /* print out messages */
@@ -40,6 +40,7 @@
     else {
         $_SESSION['authenticated'] = "authenticated";
         $_SESSION['username'] = $username;
+        $_SESSION['todays_progress'] = $dao->getTodaysProgress();
         header('Location: todo.php');
         exit();
     }

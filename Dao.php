@@ -34,15 +34,14 @@
 
     public function usernameExists($username) {
         $conn = $this->getConnection();
-        // $res = $conn->query("SELECT username FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
-        $res = $conn->query("SELECT username FROM users WHERE username = '{$username};'")->fetchAll(PDO::FETCH_ASSOC);
+        $res = $conn->query("SELECT username FROM users WHERE username = '{$username}';")->fetchAll(PDO::FETCH_ASSOC);
         return $res ? true : false;
     }
 
-    public function getUserPassword($username) {
+    public function validUserPassword($username, $password) {
         $conn = $this->getConnection();
-        // return $conn->query("SELECT password FROM users WHERE username = :username")->fetchAll(PDO::FETCH_ASSOC);
-        return $conn->query("SELECT password FROM users WHERE username = {$username};")->fetchAll(PDO::FETCH_ASSOC);
+        $res = $conn->query("SELECT password FROM users WHERE username = '{$username}';")->fetchAll(PDO::FETCH_ASSOC);
+        return $res[0]['password'] === $password ? true : false;;
     }
 
     /* get tasks */
@@ -60,6 +59,26 @@
         return $conn->query("SELECT *
                             FROM tasks 
                             WHERE task_status =='Completed'")->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllTasks() {
+        $conn = $this->getConnection();
+        return $conn->query("SELECT * FROM tasks")->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getTodaysProgress() {
+        $conn = $this->getConnection();
+        // completed today / due today
+        $completed_today = $conn->query("SELECT *
+                                        FROM tasks 
+                                        WHERE task_status ='Completed'
+                                        and task_completed_date = date(Y-m-d)")->fetchAll(PDO::FETCH_ASSOC);
+        
+        $due_today = $conn->query("SELECT *
+                                FROM tasks 
+                                WHERE task_date = date(Y-m-d)")->fetchAll(PDO::FETCH_ASSOC);
+        return count($completed_today[0]) / count($due_today[0]);
+        // return 20;
     }
 
     /* update tasks */

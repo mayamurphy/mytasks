@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+    session_start();
+?>
 <html>
     <head>
         <link rel="stylesheet" href="todo.css"/>
@@ -10,7 +13,7 @@
         <div class="header">
             <div class="header-logo"><img src="images/mytasks logo.png"/></div>
             <div class="welcome-username">
-                <!-- <p>Welcome <?php $_SESSION['username'] ?>!</p> -->
+                <p>Welcome <?php echo $_SESSION['username'] ?>!</p>
             </div>
             <div class="user-dropdown">
                 <img src="images/Default_pfp.png" alt="default profile picture">
@@ -26,7 +29,6 @@
                 <ol>
                     <li id="curr-page"><a href="todo.php">To Do</a></li>
                     <li><a href="completed.php">Completed</a></li>
-                    <li><a href="settings.php">Settings</a></li>
                 </ol>
             </div>
             <div class="tasks">
@@ -34,12 +36,25 @@
                 <?php require_once "tasks.php"?>
                 <!-- populate table -->
             </div>
+            <script>
+                window.onload = function getProgress() {
+                    document.getElementById("progress").style.width = $_SESSION['todays_progress']+"%";
+                }
+            </script>
             <div class="progress-bar-and-cal">
-                <div class="progress-bar"></div>
-                <div class="calendar"></div>
+                <div class="progress-bar-container">
+                    <h2>Today's Progress:</h2>
+                    <!-- calc today's progress -->
+                    <div class="progress-bar">
+                        <div id="progress" style="width: getProgress()"><?php echo $_SESSION['todays_progress']; ?>%</div>
+                    </div>
+                </div>
+                <div class="calendar">
+                    <h1><?php echo date("F"); ?></h1>
+                    <div id="calendar"></div>
+                </div>
             </div>
         </div>
-        <hr>
-        <div class="footer"></div>
+        <?php require_once "footer.php" ?>
     </body>
 </html>

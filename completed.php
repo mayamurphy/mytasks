@@ -6,11 +6,10 @@
 </head>
 <div id="content">
     <div id="nav">
-    <ol>
-        <li><a href="todo.php">To Do</a></li>
-        <li id="curr-page"><a href="completed.php">Completed</a></li>
-        <li><a href="settings.php">Settings</a></li>
-    </ol>
+        <ol>
+            <li><a href="todo.php">To Do</a></li>
+            <li id="curr-page"><a href="completed.php">Completed</a></li>
+        </ol>
     </div>
     <div class="left">
         <h1>COMPLETED TASKS:</h1>

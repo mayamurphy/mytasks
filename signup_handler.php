@@ -41,7 +41,7 @@
     }
     else {
         $dao->addUser($username, $email, $password);
-        header('Location: todo.php');
+        header('Location: login.php');
         exit();
     }
 
