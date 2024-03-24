@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <?php 
     session_start();
+    
+    require_once 'Dao.php';
+    $dao = new Dao();
+    $_SESSION['todays_progress'] = $dao->getTodaysProgress();
 ?>
 <html>
     <head>
         <link rel="stylesheet" href="todo.css"/>
+        <link rel="stylesheet" href="progress-bar-style.php"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono"/>
         <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>
         <title>TODO LIST</title>
@@ -36,17 +41,16 @@
                 <?php require_once "tasks.php"?>
                 <!-- populate table -->
             </div>
-            <script>
-                window.onload = function getProgress() {
-                    document.getElementById("progress").style.width = $_SESSION['todays_progress']+"%";
-                }
-            </script>
             <div class="progress-bar-and-cal">
                 <div class="progress-bar-container">
                     <h2>Today's Progress:</h2>
                     <!-- calc today's progress -->
                     <div class="progress-bar">
-                        <div id="progress" style="width: getProgress()"><?php echo $_SESSION['todays_progress']; ?>%</div>
+                        <div id="progress">
+                            <div id="progress-percent">
+                                <?php echo $_SESSION['todays_progress']; ?>%
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="calendar">

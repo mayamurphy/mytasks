@@ -174,13 +174,10 @@ html, body {
     border-style: none;
 }
 
-.progress {
-    height: 100%;
-    width: 0%;
-
-    background-color: #09bb46;
-    border-radius: 50px;
-    border-style: none;
+#progress-percent {
+    padding: 5px;
+    padding-right: 10px;
+    text-align: right;
 }
 
 .calendar {

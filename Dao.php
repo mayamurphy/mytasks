@@ -30,15 +30,19 @@
         $q->bindParam(":email",$email);
         $q->bindParam(":password",$password);
         $q->execute();
+
+        $this->logger->LogInfo("addUser: [{$username}], [{$email}], [{$password}]");
     }
 
     public function usernameExists($username) {
+        $this->logger->LogInfo("usernameExists: [{$username}]");
         $conn = $this->getConnection();
         $res = $conn->query("SELECT username FROM users WHERE username = '{$username}';")->fetchAll(PDO::FETCH_ASSOC);
         return $res ? true : false;
     }
 
     public function validUserPassword($username, $password) {
+        $this->logger->LogInfo("validUserPassword: [{$username}], [{$password}]");
         $conn = $this->getConnection();
         $res = $conn->query("SELECT password FROM users WHERE username = '{$username}';")->fetchAll(PDO::FETCH_ASSOC);
         return $res[0]['password'] === $password ? true : false;;
@@ -46,6 +50,7 @@
 
     /* get tasks */
     public function getTodoTasks() {
+        $this->logger->LogInfo("getTodoTasks");
         $conn = $this->getConnection();
         // return $conn->query("SELECT task_name, task_desc, task_date, task_color, task_status 
         return $conn->query("SELECT *
@@ -54,6 +59,7 @@
     }
 
     public function getCompletedTasks() {
+        $this->logger->LogInfo("getCompletedTasks");
         $conn = $this->getConnection();
         // return $conn->query("SELECT task_name, task_desc, task_date, task_color, task_status 
         return $conn->query("SELECT *
@@ -62,27 +68,35 @@
     }
 
     public function getAllTasks() {
+        $this->logger->LogInfo("getAllTasks");
         $conn = $this->getConnection();
         return $conn->query("SELECT * FROM tasks")->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /* calculates today's progress */
     public function getTodaysProgress() {
         $conn = $this->getConnection();
+
         // completed today / due today
-        $completed_today = $conn->query("SELECT *
+        $completed_today = count($conn->query("SELECT *
                                         FROM tasks 
                                         WHERE task_status ='Completed'
-                                        and task_completed_date = date(Y-m-d)")->fetchAll(PDO::FETCH_ASSOC);
+                                        and task_completed_date = date('Y-m-d')")->fetchAll(PDO::FETCH_ASSOC));
         
-        $due_today = $conn->query("SELECT *
+        $due_today = count($conn->query("SELECT *
                                 FROM tasks 
-                                WHERE task_date = date(Y-m-d)")->fetchAll(PDO::FETCH_ASSOC);
-        return count($completed_today[0]) / count($due_today[0]);
-        // return 20;
+                                WHERE task_due = date('Y-m-d')")->fetchAll(PDO::FETCH_ASSOC));
+        if (0 == $due_today) {
+            return 0;
+        }
+        else {
+            return $completed_today / $due_today;
+        }
     }
 
     /* update tasks */
     public function updateTaskName($task_id, $new_task_name) {
+        $this->logger->LogInfo("updateTaskName: [{$task_id}], [{$new_task_name}]");
         $conn = $this->getConnection();
         $saveQuery = "";
         
@@ -128,17 +142,25 @@
 
     public function saveTask($task_name, $task_desc, $task_due, $task_color, $task_status) {
         $conn = $this->getConnection();
-        $saveQuery = 
-            "INSERT INTO tasks
-            (task_id, task_name, task_desc, task_date, task_color, task_status)
+
+        $task_id = 0;
+        $task_added_date = date("Y-m-d");
+        $task_completed_date = 0;
+        $saveQuery = "INSERT INTO tasks
+            (task_id, task_name, task_desc, task_due, task_color, task_status, task_added_date, task_completed_date)
             VALUES
-            (null,:task_name, :task_desc, :task_date, :task_color, :task_status)";
+            (:task_id, :task_name, :task_desc, :task_due, :task_color, :task_status, :task_added_date, :task_completed_date);";
         $q = $conn->prepare($saveQuery);
+        $q->bindParam(":task_id",$task_id);
         $q->bindParam(":task_name",$task_name);
         $q->bindParam(":task_desc",$task_desc);
         $q->bindParam(":task_due",$task_due);
         $q->bindParam(":task_color",$task_color);
         $q->bindParam(":task_status",$task_status);
+        $q->bindParam(":task_added_date",$task_added_date);
+        $q->bindParam(":task_completed_date", $task_completed_date);
         $q->execute();
+
+        $this->logger->LogInfo("saveTask: [{$task_id}], [{$task_name}], [{$task_desc}], [{$task_due}], [{$task_color}], [{$task_status}], [{$task_added_date}], [{$task_completed_date}]");
     }
   }

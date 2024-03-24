@@ -40,7 +40,6 @@
     else {
         $_SESSION['authenticated'] = "authenticated";
         $_SESSION['username'] = $username;
-        $_SESSION['todays_progress'] = $dao->getTodaysProgress();
         header('Location: todo.php');
         exit();
     }
