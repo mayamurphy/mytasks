@@ -42,11 +42,13 @@
                     <form method="post" action="signup_handler.php">
                         <div>
                             <label for="signup-email">E-Mail:</label>
-                            <input type="email" placeholder="Enter E-Mail" id="signup-email" name="signup-email">
+                            <input type="email" placeholder="Enter E-Mail" id="signup-email" name="signup-email"
+                                value="<?php echo isset($_SESSION['inputs']['signup-email']) ? $_SESSION['inputs']['signup-email'] : ""; ?>">
                         </div>
                         <div>
                             <label for="signup-un">Username:</label>
-                            <input type="text" placeholder="Enter Username" id="signup-un" name="signup-un">
+                            <input type="text" placeholder="Enter Username" id="signup-un" name="signup-un"
+                                value="<?php echo isset($_SESSION['inputs']['signup-email']) ? $_SESSION['inputs']['signup-un'] : ""; ?>">
                         </div>
                         <div>
                             <label for="signup-pw">Password:</label>
