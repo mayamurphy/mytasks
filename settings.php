@@ -1,14 +1,17 @@
-<?php require_once "header.php"; ?>
 <head>
-    <link rel="stylesheet" href="settings.css"/>
+    <link rel="stylesheet" href="todo.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <title>Settings</title>
 </head>
-<div id="content">
-    <div id="nav">
-    <ol>
-        <li><a href="todo.php">To Do</a></li>
-        <li><a href="completed.php">Completed</a></li>
-    </ol>
+<?php require_once "header.php"?>
+<div class="content">
+    <div class="nav-bar">
+        <ol>
+            <li id="curr-page"><a href="todo.php">To Do</a></li>
+            <li><a href="completed.php">Completed</a></li>
+            <li><a href="all-tasks.php">All</a></li>
+        </ol>
+    </div>
 </div>
 <div class="settings">
     <h1>ACCOUNT SETTINGS</h1>

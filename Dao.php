@@ -52,7 +52,6 @@
     public function getTodoTasks() {
         $this->logger->LogInfo("getTodoTasks");
         $conn = $this->getConnection();
-        // return $conn->query("SELECT task_name, task_desc, task_date, task_color, task_status 
         return $conn->query("SELECT *
                             FROM tasks 
                             WHERE task_status !='Completed'")->fetchAll(PDO::FETCH_ASSOC);
@@ -61,10 +60,9 @@
     public function getCompletedTasks() {
         $this->logger->LogInfo("getCompletedTasks");
         $conn = $this->getConnection();
-        // return $conn->query("SELECT task_name, task_desc, task_date, task_color, task_status 
         return $conn->query("SELECT *
                             FROM tasks 
-                            WHERE task_status =='Completed'")->fetchAll(PDO::FETCH_ASSOC);
+                            WHERE task_status ='Completed'")->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getAllTasks() {

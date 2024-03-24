@@ -1,63 +1,42 @@
-<!DOCTYPE html>
-<?php 
-    session_start();
-    
-    require_once 'Dao.php';
-    $dao = new Dao();
-    $_SESSION['todays_progress'] = $dao->getTodaysProgress();
-?>
-<html>
-    <head>
-        <link rel="stylesheet" href="todo.css"/>
-        <link rel="stylesheet" href="progress-bar-style.php"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono"/>
-        <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>
-        <title>TODO LIST</title>
-    </head>
-    <body>
-        <div class="header">
-            <div class="header-logo"><img src="images/mytasks logo.png"/></div>
-            <div class="welcome-username">
-                <p>Welcome <?php echo $_SESSION['username'] ?>!</p>
-            </div>
-            <div class="user-dropdown">
-                <img src="images/Default_pfp.png" alt="default profile picture">
-                <div class="dropdown-content">
-                    <a href="settings.php">Settings</a>
-                    <a href="logout.php">Log out</a>
-                </div>
-            </div>
-        </div>
-        <hr>
+        <head>
+            <title>TO DO LIST</title>
+        </head>
+        <?php require_once "header.php"?>
         <div class="content">
             <div class="nav-bar">
                 <ol>
                     <li id="curr-page"><a href="todo.php">To Do</a></li>
                     <li><a href="completed.php">Completed</a></li>
+                    <li><a href="all-tasks.php">All</a></li>
                 </ol>
             </div>
             <div class="tasks">
-                <h1>MY TASKS:</h1>
-                <?php require_once "tasks.php"?>
-                <!-- populate table -->
+                <h1>TASKS TO DO:</h1>
+                <table class="tasks-table">
+                    <thead>
+                        <tr>
+                            <th id="tt-name">Name</th>
+                            <th id="tt-desc">Description</th>
+                            <th id="tt-due">Due</th>
+                            <th id="tt-color">Color</th>
+                            <th id="tt-status">Status</th>
+                        </tr>
+                    </thead>
+                    <?php
+                    $lines = $dao->getTodoTasks();
+                    foreach ($lines as $line) {
+                        echo "<tr>
+                        <td>{$line['task_name']}</td>
+                        <td>{$line['task_desc']}</td>
+                        <td>{$line['task_due']}</td>
+                        <td>{$line['task_color']}</td>
+                        <td>{$line['task_status']}</td>
+                        </tr>";
+                    }
+                    ?> 
+                </table>
             </div>
-            <div class="progress-bar-and-cal">
-                <div class="progress-bar-container">
-                    <h2>Today's Progress:</h2>
-                    <!-- calc today's progress -->
-                    <div class="progress-bar">
-                        <div id="progress">
-                            <div id="progress-percent">
-                                <?php echo $_SESSION['todays_progress']; ?>%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="calendar">
-                    <h1><?php echo date("F"); ?></h1>
-                    <div id="calendar"></div>
-                </div>
-            </div>
+            <?php require_once "progress_bar_and_calendar.php"?>
         </div>
         <?php require_once "footer.php" ?>
     </body>

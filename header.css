@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    font-family: "Oxygen Mono", monospace;
+}
+
+html, body {
+    height: 100%;
+    padding: 0;
+    background-color: #d9eaf7;
+}
+
+.header {
+    display: flex;
+    height: 100px;
+}
+
+.header-logo {
+    width: 25%;
+}
+
+.header-logo img {
+    height: 100%;
+}
+
+.welcome-username {
+    height: 100%;
+    width: 70%;
+
+    font-weight: bold;
+    font-size: 30px;
+
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+.user-dropdown {
+    height: 100%;
+    width: 90px;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.user-dropdown img {
+    height: 90px;
+    width: 90px;
+    
+    border-style: solid;
+    border-radius: 100%;
+    border-width: 1px;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 0 6px 0 6px;
+    
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 40px;
+}
+
+.dropdown-content a:hover {
+    background-color: #6082B6;
+}
