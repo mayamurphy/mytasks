@@ -15,6 +15,7 @@
     <head>
         <link rel="stylesheet" href="header.css"/>
         <link rel="stylesheet" href="todo.css"/>
+        <link rel="stylesheet" href="tasks-table.css"/>
         <link rel="stylesheet" href="progress-bar-style.php"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono"/>
         <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>

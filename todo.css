@@ -18,6 +18,8 @@
     display: inline-flex;
     height: 100%;
     width: 150px;
+
+    padding-top: 5px;
     
     font-size: 25px;
     border-right: 1px solid;
@@ -46,11 +48,11 @@
 }
 
 .nav-bar a:hover {
-    background-color: #6082B6;
+    background-color: #6082b6;
 }
 
 #curr-page {
-    background-color: #6082B6;
+    background-color: #6082b6;
     border-style: solid;
     border-radius: 40px;
     border-width: 0;
@@ -58,31 +60,27 @@
 
 .tasks {
     width: 60%;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
-
-
-    /* border-style: solid;
-    border-color: red; */
+    
+    background-color: #6082b6;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
 }
 
 .progress-bar-and-cal {
     width: 40%;
     margin: 5px;
     padding: 5px;
-
-
-
-    /* border-style: solid;
-    border-color: red; */
 }
 
 .progress-bar-container {
-    height: 10%;
-    margin: 5px;
+    height: 80px;
     padding: 5px;
+    margin: 0;
 
-    background-color: #6082B6;
+    background-color: #6082b6;
     border-radius: 10px;
     
 
@@ -106,13 +104,13 @@
     text-align: right;
 }
 
-.calendar {
-    height: 75%;
-    margin: 5px;
+.calendar-container {
+    height: calc(100% - 110px);
+    margin: 0;
     margin-top: 10px;
 
 
-    background-color: #6082B6;
+    background-color: #6082b6;
     border-radius: 10px;
 
     border-style: solid;
@@ -120,7 +118,7 @@
     /* border-color: red; */
 }
 
-.calendar h1 {
+.calendar-container h1 {
     padding-left: 10px;
     padding-top: 5px;
 }

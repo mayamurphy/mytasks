@@ -1,0 +1,70 @@
+.tasks-table {
+    border-style: none;
+    border-width: 0;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    
+    overflow: hidden;
+
+    background-color: #60adb6;
+}
+
+thead {
+    padding: 5px;
+}
+
+th, td {
+    padding-left: 10px;
+    /* background-color: #bfbfbf; */
+    border-radius: 40px;
+}
+
+tr {
+    height: fit-content;
+    max-height: 32px;
+    overflow: hidden;
+
+    border-style: solid;
+    border-width: 2px;
+
+    font-size: 16px;
+}
+
+#tt-name {
+    width: 30%;
+}
+
+#tt-desc {
+    width: 40%;
+}
+
+#tt-due {
+    width: 10%;
+}
+
+#tt-color {
+    width: 5%;
+}
+
+#tt-status {
+    width: 15%;
+}
+
+.task-list button {
+    margin-top: 5px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    background-color: green;
+    color: white;
+    border-color: green;
+    text-align: center;
+}
