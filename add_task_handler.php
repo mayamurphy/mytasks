@@ -7,6 +7,10 @@
     $task_color = $_POST['task_color'];
     $task_status = $_POST['task_status'];
 
+    if ("Completed" === $task_status) {
+        $_SESSION['todays_progress'] = $dao->getTodaysProgress();
+    }
+
     $dao = new Dao();
     $dao->saveTask($task_name, $task_desc, $task_due, $task_color, $task_status);
 

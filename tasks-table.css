@@ -12,7 +12,7 @@ table {
     border-width: 2px;
     border-radius: 20px;
     
-    overflow: hidden;
+    overflow: scroll;
 
     background-color: #60adb6;
 }
@@ -22,15 +22,14 @@ thead {
 }
 
 th, td {
-    padding-left: 10px;
-    /* background-color: #bfbfbf; */
+    padding-left: 5px;
     border-radius: 40px;
 }
 
 tr {
     height: fit-content;
     max-height: 32px;
-    overflow: hidden;
+    text-overflow: ellipsis;
 
     border-style: solid;
     border-width: 2px;
@@ -38,33 +37,96 @@ tr {
     font-size: 16px;
 }
 
+.add-task form {
+    display: none;
+    background-color: aquamarine;
+}
+
+.add-task input {
+    width: 95%;
+    border-radius: 40px;
+}
+
+.add-task option {
+    border-radius: 100%;
+}
+
+#tt-placeholder {
+    width: 5px;
+}
+
 #tt-name {
-    width: 30%;
+    width: 300px;
 }
 
 #tt-desc {
-    width: 40%;
+    width: 350px;
 }
 
 #tt-due {
-    width: 10%;
+    width: 100px;
 }
 
 #tt-color {
-    width: 5%;
+    width: 50px;
 }
 
 #tt-status {
-    width: 15%;
+    width: 110px;
 }
 
-.task-list button {
-    margin-top: 5px;
+#add-task-button {
+    height: 25px;
+    width: 25px;
+
     border-radius: 100%;
-    height: 30px;
-    width: 30px;
-    background-color: green;
-    color: white;
-    border-color: green;
-    text-align: center;
+}
+
+#add-task-button:hover {
+    background-color: #0BDA51;
+}
+
+.mark-completed button {
+    border-radius: 100%;
+}
+
+.task-dropdown {
+    padding-left: 5px;
+}
+
+#dot {
+    height: 3px;
+    width: 3px;
+
+    margin: 2px 0;
+
+    background-color: black;
+    border-radius: 100%;
+}
+
+.task-dropdown:hover .task-dropdown-content {
+    display: block;
+}
+
+.task-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 60%;
+    z-index: 1;
+}
+
+.task-dropdown-content a {
+    display: block;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 0 6px 0 6px;
+    
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 40px;
+}
+
+.task-dropdown-content a:hover {
+    background-color: #6082B6;
 }
