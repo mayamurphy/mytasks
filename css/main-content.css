@@ -10,7 +10,8 @@
 
 .content {
     display: inline-flex;
-    height: calc(100% - 165px);
+    height: fit-content;
+    min-height: calc(100% - 145px);
     width: 100%;
 }
 
@@ -28,6 +29,7 @@
 
 .nav-bar ol {
     list-style-type: none;
+    height: 100%;
     padding: 0;
     padding-top: 5px;
     padding-right: 5px;
@@ -59,8 +61,10 @@
 }
 
 .tasks {
-    width: 60%;
+    display: block;
+    width: 1200px;
     margin: 10px;
+    margin-right: 5px;
     padding: 5px;
     
     background-color: #6082b6;
@@ -70,8 +74,10 @@
 }
 
 .progress-bar-and-cal {
-    width: 40%;
+    display: block;
+    width: 770px;
     margin: 5px;
+    margin-left: 0;
     padding: 5px;
 }
 
@@ -104,10 +110,10 @@
 }
 
 .calendar-container {
-    height: calc(100% - 110px);
+    display: block;
+    height: 440px;
     margin: 0;
     margin-top: 10px;
-
 
     background-color: #6082b6;
     border-radius: 10px;
@@ -119,8 +125,4 @@
 .calendar-container h1 {
     padding-left: 10px;
     padding-top: 5px;
-}
-
-.footer {
-    height: 60px;
 }

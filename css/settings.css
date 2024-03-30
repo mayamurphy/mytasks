@@ -1,0 +1,56 @@
+.settings {
+    height: 100%;
+    width: 100%;
+
+    margin: 10px;
+    padding: 5px;
+    
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.settings h1 {
+    text-align: center;
+}
+
+#profile-image {
+    height: 200px;
+    width: 200px;
+
+    margin-top: 10px;
+    margin-inline: auto;
+    
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#profile-image img {
+    height: 150px;
+    width: 150px;
+    
+    padding: 25px;
+}
+
+.user-info {
+    width: 1000px;
+    margin-inline: auto;
+}
+
+#update-profile-form label {
+    display: inline-block;
+    width: 300px;
+
+    padding: 5px;
+    text-align: right;
+
+    font-size: 16px;
+}
+
+#update-profile-form input {
+    height: 2em;
+    width: 300px;
+    padding-left: 5px;
+    border-radius: 40px;
+}

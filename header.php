@@ -13,12 +13,16 @@
 ?>
 <html>
     <head>
-        <link rel="stylesheet" href="header.css"/>
-        <link rel="stylesheet" href="todo.css"/>
-        <link rel="stylesheet" href="tasks-table.css"/>
-        <link rel="stylesheet" href="progress-bar-style.php"/>
+        <link rel="stylesheet" href="css/header.css"/>
+        <link rel="stylesheet" href="css/footer.css"/>
+        <link rel="stylesheet" href="css/main-content.css"/>
+        <link rel="stylesheet" href="css/tasks-table.css"/>
+        <link rel="stylesheet" href="css/progress-bar-style.php"/>
+        <link rel="stylesheet" href="css/settings.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono"/>
         <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/"></script>
     </head>
     <body>
       <div class="header">

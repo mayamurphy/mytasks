@@ -3,5 +3,3 @@
       <hr>
       <span>Contact: Maya Murphy</span>
     </div>
-  </body>
-</html>
