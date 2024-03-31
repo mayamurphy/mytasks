@@ -14,11 +14,37 @@
             <div class="settings">
                 <h1>ACCOUNT SETTINGS</h1>
                 <hr>
-                <?php
-                    $user_info = $dao->getUserInfo($_SESSION['username']);
-                    echo "Username: " . $user_info[0]['username'];
-                    echo "E-mail: " . $user_info[0]['email'];
-                ?>
+                <div class="user-info">
+                    <?php
+                        $user_info = $dao->getUserInfo($_SESSION['username']);
+                        echo    "<div class='display-pfp'>
+                                    <img src='". $user_info[0]['pfp_link']."'>
+                                    <div id='update-pfp'>
+                                        <button>&#x1F589</button>
+                                    </div>
+                                </div>
+                                <div class='display-user-info'>
+                                    <div class='display un'>Username: " . 
+                                        $user_info[0]['username'] . 
+                                    "</div>";
+                        echo        "<div class='display email'>
+                                        E-mail: " . $user_info[0]['email'] . 
+                                    "</div>
+                                    <div id='update email'>
+                                        <button>&#x1F589</button>
+                                    </div> 
+                                    <div class='display pw'>
+                                        Password: "; 
+                                        foreach(str_split($user_info[0]['password']) as $char) {
+                                            echo '&#8226';
+                                        }
+                        echo        "</div>
+                                    <div id='update pw'>
+                                        <button>&#x1F589</button>
+                                    </div> 
+                                </div>";
+                    ?>
+                </div>
             </div>
         </div>
         <?php require_once "footer.php" ?>

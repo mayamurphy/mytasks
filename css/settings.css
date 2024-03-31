@@ -5,28 +5,60 @@
     margin: 10px;
     padding: 5px;
     
-    border-radius: 10px;
+    /* border-radius: 10px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 2px; */
 }
 
 .settings h1 {
     text-align: center;
 }
 
-#profile-image {
-    height: 100px;
-    width: 100px;
+.user-info {
+    width: 1000px;
+    margin-inline: auto;
 
     margin-top: 10px;
-    margin-inline: auto;
-    
-    border-radius: 100%;
-    border-style: solid;
-    border-width: 2px;
 }
 
-#profile-image img {
-    height: 100px;
-    width: 100px;
+.user-info button {
+    border-radius: 100%;
+
+    font-size: 16px;
+    text-align: center;
+
+}
+
+.user-info button:hover {
+    background-color: #abbdce;
+}
+
+.display-pfp {
+    height: 225px;
+    width: 200px;
+    margin-inline: auto;
+}
+
+.display-pfp button {
+    float: right;
+}
+
+.display-pfp img {
+    height: 200px;
+    width: 200px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 100%;
+}
+
+.display-user-info {
+    width: 300px;
+    margin-top: 20px;
+    margin-inline: auto;
+}
+
+.display-user-info div {
+    display: inline-flex;
+    padding-top: 5px;
 }

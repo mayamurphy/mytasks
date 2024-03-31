@@ -24,7 +24,7 @@
         $conn = $this->getConnection();
         $saveQuery = 
             "INSERT INTO users (username, email, password, pfp_link)
-            VALUE (:username, :email, :password, 'images\Default_pfp.png')";
+            VALUE (:username, :email, :password, 'images/Default_pfp.png')";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":username",$username);
         $q->bindParam(":email",$email);
