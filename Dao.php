@@ -3,10 +3,10 @@
 
     class Dao {
 
-    private $host = "localhost";
-    private $db = "mytasks";
-    private $user = "root";
-    private $pass = "";
+    private $host = "l9dwvv6j64hlhpul.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    private $db = "rqbdbs0p9aoruwo7";
+    private $user = "ebpl0unrvz4jmcmu";
+    private $pass = "vuk0katccii0kcge";
     protected $logger;
 
     public function getConnection () {
@@ -17,6 +17,27 @@
 
     public function __construct() {
         $this->logger = new KLogger ( "log.txt" , KLogger::DEBUG );
+        $conn = $this->getConnection();
+        $users_table = "CREATE TABLE IF NOT EXISTS 
+                        users (user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+                        username VARCHAR(64) NOT NULL UNIQUE, 
+                        email VARCHAR(256) NOT NULL, 
+                        password VARCHAR(128) NOT NULL, 
+                        pfp_link VARCHAR(256) NOT NULL);";
+        $q = $conn->prepare($users_table);
+        $q->execute();
+
+        $tasks_table = "CREATE TABLE IF NOT EXISTS
+                        tasks (task_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+                        user_id INT NOT NULL, task_name VARCHAR(256) NOT NULL, 
+                        task_desc VARCHAR(256), task_due DATE NOT NULL, 
+                        task_color VARCHAR(7) NOT NULL, 
+                        task_status VARCHAR(12) NOT NULL, 
+                        task_created_date DATE NOT NULL, 
+                        task_completed_date DATE NOT NULL,
+                        FOREIGN KEY (user_id) REFERENCES users(user_id));";
+        $q = $conn->prepare($tasks_table);
+        $q->execute();
     }
 
     /* user stuff */
