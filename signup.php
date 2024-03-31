@@ -6,6 +6,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/login-signup.css"/>
+        <link rel="stylesheet" href="css/footer.css"/>
         <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono"/>
         <title>Sign up</title>

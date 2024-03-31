@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once 'Dao.php';
 
     $task_name = $_POST['task_name'];
@@ -27,7 +28,7 @@
 
     if ("Completed" === $task_status) {
         $task_completed_date = date('Y-m-d');
-        $_SESSION['todays_progress'] = $dao->getTodaysProgress();
+        $_SESSION['todays_progress'] = $dao->getTodaysProgress($_SESSION['user_id']);
     }
     
     /* print out messages */
@@ -35,7 +36,7 @@
         $_SESSION['messages'] = $messages;
         $_SESSION['inputs'] = $_POST;
     }
-
-    $dao->saveTask($task_name, $task_desc, $task_due, $task_color, $task_status, $task_completed_date);
+    
+    $dao->saveTask($_SESSION['user_id'], $task_name, $task_desc, $task_due, $task_color, $task_status, $task_completed_date);
     header('Location: todo.php');
     exit;

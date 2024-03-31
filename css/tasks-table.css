@@ -54,19 +54,15 @@ tr {
     width: 5px;
 }
 
-#tt-name {
-    width: 240px;
-    max-width: 240px;
+#tt-name, #tt-name input {
+    width: 200px;
+    max-width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-#tt-name input {
-    width: 240px;
-}
-
-#tt-desc {
+#tt-desc, #tt-desc input {
     width: 250px;
     max-width: 250px;
     overflow: hidden;
@@ -74,17 +70,15 @@ tr {
     white-space: nowrap;
 }
 
-#tt-desc input {
-    width: 250px;
-}
-
 #tt-due, #tt-due input {
-    width: 100px;
+    width: 110x;
+    text-align: center;
     padding-left: 10px;
 }
 
 #tt-color, #tt-color input {
-    width: 50px;
+    width: 80px;
+    text-align: center;
 }
 
 #tt-status {

@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <?php 
     session_start();
+    if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+      header("Location: todo.php");
+      exit();
+    }
     require_once "Dao.php";
 ?>
 <html>
     <head>
         <link rel="stylesheet" href="css/login-signup.css"/>
+        <link rel="stylesheet" href="css/footer.css"/>
         <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono"/>
         <title>Log in</title>

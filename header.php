@@ -9,7 +9,7 @@
     
     require_once 'Dao.php';
     $dao = new Dao();
-    $_SESSION['todays_progress'] = $dao->getTodaysProgress();
+    $_SESSION['todays_progress'] = $dao->getTodaysProgress($_SESSION['user_id']);
 ?>
 <html>
     <head>

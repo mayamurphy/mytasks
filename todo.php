@@ -34,7 +34,7 @@
                                 <td id="tt-due"><input type="date" name="task_due" id="task_due" value="<?php ?>" required></td>
                                 <td id="tt-color"><input type="color" name="task_color" id="task_color"></td>
                                 <td id="tt-status">
-                                    <select name="task_status">
+                                    <select name="task_status" value="Not Started">
                                         <option value="Not Started">Not Started</option>
                                         <option value="In Progress">In Progress</option>
                                         <option value="Completed">Completed</option>
@@ -44,7 +44,7 @@
                             </form>
                         </tr>
                         <?php
-                            $lines = $dao->getTodoTasks();
+                            $lines = $dao->getTodoTasks($_SESSION['user_id']);
                             foreach ($lines as $line) {
                                 echo "<tr>
                                     <td id='tt-placeholder'>

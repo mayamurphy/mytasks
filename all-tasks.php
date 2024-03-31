@@ -44,7 +44,7 @@
                             </form>
                         </tr>
                         <?php
-                            $lines = $dao->getAllTasks();
+                            $lines = $dao->getAllTasks($_SESSION['user_id']);
                             foreach ($lines as $line) {
                                 echo "<tr>
                                     <td id='tt-placeholder'>

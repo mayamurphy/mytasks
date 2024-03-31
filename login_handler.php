@@ -40,6 +40,8 @@
     else {
         $_SESSION['authenticated'] = "authenticated";
         $_SESSION['username'] = $username;
+        $_SESSION['user_id'] = $dao->getUserInfo($username)[0]['user_id'];
+        
         header('Location: todo.php');
         exit();
     }
