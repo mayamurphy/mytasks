@@ -62,7 +62,6 @@ tr {
 }
 
 #tt-name:hover {
-    min-width: 200px;
     overflow: visible;
     white-space: wrap;
 }
@@ -142,18 +141,20 @@ tr {
     z-index: 1;
 }
 
-.task-dropdown-content a {
+.task-dropdown-content button {
     display: block;
+    width: 60px;
     text-decoration: none;
     background-color: white;
     color: black;
     padding: 0 6px 0 6px;
     
+    border-color: #000000;
     border-width: 1px;
     border-style: solid;
     border-radius: 40px;
 }
 
-.task-dropdown-content a:hover {
+.task-dropdown-content button:hover {
     background-color: #6082B6;
 }

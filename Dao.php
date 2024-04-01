@@ -3,10 +3,16 @@
 
     class Dao {
 
-    private $host = "l9dwvv6j64hlhpul.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-    private $db = "rqbdbs0p9aoruwo7";
-    private $user = "ebpl0unrvz4jmcmu";
-    private $pass = "vuk0katccii0kcge";
+    // private $host = "l9dwvv6j64hlhpul.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    // private $db = "rqbdbs0p9aoruwo7";
+    // private $user = "ebpl0unrvz4jmcmu";
+    // private $pass = "vuk0katccii0kcge";
+
+    private $host = "localhost";
+    private $db = "mytasks";
+    private $user = "root";
+    private $pass = "";
+
     protected $logger;
 
     public function getConnection () {
@@ -29,14 +35,22 @@
 
         $tasks_table = "CREATE TABLE IF NOT EXISTS
                         tasks (task_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-                        user_id INT NOT NULL, task_name VARCHAR(256) NOT NULL, 
-                        task_desc VARCHAR(256), task_due DATE NOT NULL, 
+                        user_id INT NOT NULL, task_name VARCHAR(4096) NOT NULL, 
+                        task_desc VARCHAR(4096), task_due DATE NOT NULL, 
                         task_color VARCHAR(7) NOT NULL, 
                         task_status VARCHAR(12) NOT NULL, 
                         task_created_date DATE NOT NULL, 
                         task_completed_date DATE NOT NULL,
                         FOREIGN KEY (user_id) REFERENCES users(user_id));";
         $q = $conn->prepare($tasks_table);
+        $q->execute();
+    }
+
+    /* used for updating db */
+    public function updateDB() {
+        $conn = $this->getConnection();
+        $saveQuery = "";
+        $q = $conn->prepare($saveQuery);
         $q->execute();
     }
 
@@ -105,6 +119,13 @@
         return $conn->query("SELECT * FROM tasks WHERE user_id = {$user_id}")->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function taskExists($task_id) {
+        $this->logger->LogInfo("taskExists: [{$task_id}]");
+        $conn = $this->getConnection();
+        $res = $conn->query("SELECT task_id FROM tasks WHERE task_id = '{$task_id}';")->fetchAll(PDO::FETCH_ASSOC);
+        return $res ? true : false;
+    }
+
     /* calculates today's progress */
     public function getTodaysProgress($user_id) {
         $conn = $this->getConnection();
@@ -125,7 +146,7 @@
             return 0;
         }
         else {
-            return ($completed_today / $due_today) * 100;
+            return round((($completed_today / $due_today) * 100), 0);
         }
     }
 
@@ -212,5 +233,13 @@
         $q->execute();
 
         $this->logger->LogInfo("saveTask: [{$task_id}], [{$task_name}], [{$task_desc}], [{$task_due}], [{$task_color}], [{$task_status}], [{$task_created_date}], [{$task_completed_date}]");
+    }
+
+    public function deleteTask($task_id) {
+        $conn = $this->getConnection();
+        $saveQuery = "DELETE FROM tasks WHERE task_id = :task_id";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":task_id",$task_id);
+        $q->execute();
     }
   }

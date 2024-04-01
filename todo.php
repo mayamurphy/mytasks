@@ -73,8 +73,16 @@
                                                 <div id='dot'></div></button>
                                             </div>
                                             <div class='task-dropdown-content'>
-                                                <a href='#'>Edit</a>
-                                                <a href='#'>Delete</a>
+                                                <div class='edit-task'>
+                                                    <button>Edit</button>
+                                                </div>
+                                                <div class='delete-task'>
+                                                    <form method='post' action='delete_task_handler.php'>
+                                                        <input type='hidden' name='location' value='todo.php'>
+                                                        <input type='hidden' name='task_id' value='{$line['task_id']}'>
+                                                        <button type='submit'>Delete</button>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
