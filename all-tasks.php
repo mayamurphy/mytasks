@@ -28,7 +28,8 @@
                         </thead>
                         <tr class="add-task">
                             <td id="tt-placeholder"></td>
-                            <form id="add-task-form" method="post" action="all-tasks_add_task_handler.php">
+                            <form id="add-task-form" method="post" action="add_task_handler.php">
+                                <input type="hidden" name="location" value="all-tasks.php">
                                 <td id="tt-name"><input type="text" name="task_name" id="task_name" required></td>
                                 <td id="tt-desc"><input type="text" name="task_desc" id="task_desc"></td>
                                 <td id="tt-due"><input type="date" name="task_due" id="task_due" value="<?php ?>" required></td>
@@ -49,7 +50,8 @@
                                 echo "<tr>
                                     <td id='tt-placeholder'>
                                         <div class='mark-completed'>
-                                            <form method='post' action='all-tasks_task_status_handler.php'>
+                                            <form method='post' action='task_status_handler.php'>
+                                                <input type='hidden' name='location' value='all-tasks.php'>
                                                 <input type='hidden' name='task_id' value='{$line['task_id']}'>";
                                 echo ('Completed' == $line['task_status']) ? 
                                                 "<input type='hidden' name='new_task_status' value='Not Started'>" 

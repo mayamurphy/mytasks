@@ -2,6 +2,7 @@
     session_start();
     require_once 'Dao.php';
 
+    $location = $_POST['location'];
     $task_name = $_POST['task_name'];
     $task_desc = $_POST['task_desc'];
     $task_due = $_POST['task_due'];
@@ -38,5 +39,5 @@
     }
     
     $dao->saveTask($_SESSION['user_id'], $task_name, $task_desc, $task_due, $task_color, $task_status, $task_completed_date);
-    header('Location: todo.php');
+    header('Location: ' . $location);
     exit;

@@ -1,6 +1,7 @@
 <?php
     require_once 'Dao.php';
 
+    $location = $_POST['location'];
     $task_id = $_POST['task_id'];
     $new_task_status = $_POST['new_task_status'];
 
@@ -20,5 +21,5 @@
     $dao->updateTaskStatus($task_id, $new_task_status, $task_completed_date);
     $_SESSION['todays_progress'] = $dao->getTodaysProgress($_SESSION['user_id']);
 
-    header('Location: todo.php');
+    header('Location: ' . $location);
     exit;
