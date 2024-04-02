@@ -32,7 +32,7 @@
                                 <input type="hidden" name="location" value="all-tasks.php">
                                 <td id="tt-name"><input type="text" name="task_name" id="task_name" required></td>
                                 <td id="tt-desc"><input type="text" name="task_desc" id="task_desc"></td>
-                                <td id="tt-due"><input type="date" name="task_due" id="task_due" value="<?php ?>" required></td>
+                                <td id="tt-due"><input type="date" name="task_due" id="task_due" value="<?php echo date('Y-m-d')?>" required></td>
                                 <td id="tt-color"><input type="color" name="task_color" id="task_color"></td>
                                 <td id="tt-status">
                                     <select name="task_status">
