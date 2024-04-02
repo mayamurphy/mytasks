@@ -12,8 +12,4 @@
                         </div>
                     </div>
                 </div>
-                <div class="calendar-container">
-                    <h1><?php echo date("F"); ?></h1>
-                    <div class="calendar"></div>
-                </div>
             </div>
