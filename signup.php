@@ -48,7 +48,7 @@
                             </div>
                             <div>
                                 <label for="signup-un">Username:</label>
-                                <input type="text" placeholder="Enter Username" id="signup-un" name="signup-un"
+                                <input type="text" placeholder="Enter Username (1-64 characters)" id="signup-un" name="signup-un"
                                     value="<?php echo isset($_SESSION['inputs']['signup-email']) ? $_SESSION['inputs']['signup-un'] : ""; ?>">
                             </div>
                             <div>
