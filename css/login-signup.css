@@ -69,7 +69,7 @@ h1 {
 
 .login-form input, .signup-form input {
     height: 2em;
-    width: 45%;
+    width: 50%;
     padding-left: 5px;
     border-radius: 40px;
 }

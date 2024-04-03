@@ -144,6 +144,9 @@ tr {
 .task-dropdown-content button {
     display: block;
     width: 60px;
+
+    cursor: pointer;
+
     text-decoration: none;
     background-color: white;
     color: black;
@@ -157,4 +160,53 @@ tr {
 
 .task-dropdown-content button:hover {
     background-color: #6082B6;
+}
+
+#edit-task-form {
+    display: none;
+    position: fixed;
+    height: 450px;
+    width: 700px;
+
+    padding: 10px;
+
+    border-width: 2px;
+    border-radius: 20px;
+    border-style: groove;
+    border-color: #000000;
+
+    background-color: #aeaeae;
+
+    z-index: 10;
+}
+
+#edit-task-form div {
+    padding: 10px;
+}
+
+#edit-task-form textarea {
+    height: 90px;
+    width: 98%;
+
+    resize: none;
+
+    text-wrap: wrap;
+}
+
+.top-of-form {
+    display: flex;
+}
+
+.top-of-form button {
+    position: absolute;
+    right: 10px;
+}
+
+.not-textarea {
+    display: flex;
+}
+
+.button {
+    width: fit-content;
+    margin-inline: auto;
 }

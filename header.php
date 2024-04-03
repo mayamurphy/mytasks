@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="css/settings.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono"/>
         <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="js/code.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="js\edit-task-form.js"></script>
     </head>
     <body>
       <div class="header">

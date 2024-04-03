@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once 'Dao.php';
 
     $location = $_POST['location'];
@@ -18,7 +19,7 @@
         $task_completed_date = 0; 
     }
 
-    $dao->updateTaskStatus($task_id, $new_task_status, $task_completed_date);
+    $dao->updateTaskStatus($_SESSION['user_id'], $task_id, $new_task_status, $task_completed_date);
     $_SESSION['todays_progress'] = $dao->getTodaysProgress($_SESSION['user_id']);
 
     header('Location: ' . $location);

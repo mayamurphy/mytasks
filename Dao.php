@@ -99,7 +99,7 @@
         return $conn->query("SELECT *
                             FROM tasks 
                             WHERE user_id = '{$user_id}'
-                            and task_status !='Completed'
+                            AND task_status !='Completed'
                             ORDER BY task_due ASC")->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -109,7 +109,7 @@
         return $conn->query("SELECT *
                             FROM tasks 
                             WHERE user_id = '{$user_id}'
-                            and task_status ='Completed'
+                            AND task_status ='Completed'
                             ORDER BY task_due ASC")->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -126,6 +126,12 @@
         return $res ? true : false;
     }
 
+    public function getTask($user_id, $task_id) {
+        $this->logger->LogInfo("getTask: [{$task_id}], [{$user_id}]");
+        $conn = $this->getConnection();
+        return $conn->query("SELECT * FROM tasks WHERE task_id = '{$task_id}' AND user_id = '{$user_id}';")->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     /* calculates today's progress */
     public function getTodaysProgress($user_id) {
         $conn = $this->getConnection();
@@ -135,13 +141,13 @@
         $completed_today = count($conn->query("SELECT *
                                 FROM tasks 
                                 WHERE user_id = '{$user_id}'
-                                and task_status ='Completed'
-                                and task_completed_date = '{$date}'")->fetchAll(PDO::FETCH_ASSOC));
+                                AND task_status ='Completed'
+                                AND task_completed_date = '{$date}'")->fetchAll(PDO::FETCH_ASSOC));
         
         $due_today = count($conn->query("SELECT *
                                 FROM tasks 
                                 WHERE user_id = '{$user_id}'
-                                and task_due = '{$date}'")->fetchAll(PDO::FETCH_ASSOC));
+                                AND task_due = '{$date}'")->fetchAll(PDO::FETCH_ASSOC));
         if (0 == $due_today) {
             return 0;
         }
@@ -151,60 +157,67 @@
     }
 
     /* update tasks */
-    public function updateTaskName($task_id, $new_task_name) {
+    public function updateTaskName($user_id, $task_id, $new_task_name) {
         $conn = $this->getConnection();
         $saveQuery = "UPDATE tasks
                         SET task_name = :new_task_name
-                        WHERE task_id = :task_id";
+                        WHERE task_id = :task_id AND user_id = :user_id";
         $q = $conn->prepare($saveQuery);
+        $q->bindParam(":task_id",$task_id);
+        $q->bindParam(":user_id",$user_id);
+        $q->bindParam(":new_task_name",$new_task_name);
         $q->execute();
         $this->logger->LogInfo("updateTaskName: [{$task_id}], [{$new_task_name}]");
     }
 
-    public function updateTaskDesc($task_id, $new_task_desc) {
+    public function updateTaskDesc($user_id, $task_id, $new_task_desc) {
         $conn = $this->getConnection();
         $saveQuery = "UPDATE tasks
                         SET task_desc = :new_task_desc
-                        WHERE task_id = :task_id";
+                        WHERE task_id = :task_id AND user_id = :user_id";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":task_id",$task_id);
+        $q->bindParam(":user_id",$user_id);
         $q->bindParam(":new_task_desc",$new_task_desc);
         $q->execute();
         $this->logger->LogInfo("updateTaskDesc: [{$task_id}], [{$new_task_desc}]");
     }
 
-    public function updateTaskDueDate($task_id, $new_task_due_date) {
+    public function updateTaskDueDate($user_id, $task_id, $new_task_due_date) {
         $conn = $this->getConnection();
         $saveQuery = "UPDATE tasks
                         SET task_due_date = :new_task_due_date
-                        WHERE task_id = :task_id";
+                        WHERE task_id = :task_id AND user_id = :user_id";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":task_id",$task_id);
+        $q->bindParam(":user_id",$user_id);
         $q->bindParam(":new_task_due_date",$new_task_due_date);
         $q->execute();
         $this->logger->LogInfo("updateTaskDueDate: [{$task_id}], [{$new_task_due_date}]");
     }
 
-    public function updateTaskColor($task_id, $new_task_color) {
+    public function updateTaskColor($user_id, $task_id, $new_task_color) {
         $conn = $this->getConnection();
         $saveQuery = "UPDATE tasks
                         SET task_color = :new_task_color
-                        WHERE task_id = :task_id";
+                        WHERE task_id = :task_id AND user_id = :user_id";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":task_id",$task_id);
+        $q->bindParam(":user_id",$user_id);
         $q->bindParam(":new_task_color",$new_task_color);
         $q->execute();
         $this->logger->LogInfo("updateTaskColor: [{$task_id}], [{$new_task_color}]");
     }
 
-    public function updateTaskStatus($task_id, $new_task_status, $task_completed_date) {
+    public function updateTaskStatus($user_id, $task_id, $new_task_status, $task_completed_date) {
         $conn = $this->getConnection();
         $saveQuery = "UPDATE tasks
                         SET task_status = :new_task_status,
                             task_completed_date = :task_completed_date
-                        WHERE task_id = :task_id";
+                        WHERE task_id = :task_id AND user_id = :user_id";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":task_id",$task_id);
+        $q->bindParam(":user_id",$user_id);
         $q->bindParam(":new_task_status",$new_task_status);
         $q->bindParam(":task_completed_date", $task_completed_date);
         $q->execute();

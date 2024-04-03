@@ -56,7 +56,6 @@
                                 echo ('Completed' == $line['task_status']) ? 
                                                 "<input type='hidden' name='new_task_status' value='Not Started'>" 
                                                 :  "<input type='hidden' name='new_task_status' value='Completed'>";
-                                                
                                 echo            "<button type='submit'>&#10004</button>
                                             </form>
                                         </div>
@@ -75,11 +74,11 @@
                                             </div>
                                             <div class='task-dropdown-content'>
                                                 <div class='edit-task'>
-                                                    <button>Edit</button>
+                                                    <button type='button' onClick='editTaskForm()'>Edit</button>
                                                 </div>
                                                 <div class='delete-task'>
                                                     <form method='post' action='delete_task_handler.php'>
-                                                        <input type='hidden' name='location' value='todo.php'>
+                                                        <input type='hidden' name='location' value='completed.php'>
                                                         <input type='hidden' name='task_id' value='{$line['task_id']}'>
                                                         <button type='submit'>Delete</button>
                                                     </form>
@@ -87,7 +86,44 @@
                                             </div>
                                         </div>
                                     </td>
-                                </tr>";
+                                </tr>
+                                <div id='edit-task-form'>
+                                    <div class='top-of-form'>
+                                        <h2>Edit task</h2>
+                                        <button onClick='closeEditTaskForm()'>Close X</button>
+                                    </div>
+                                    <form method='post' action='task_edit_handler.php'>
+                                        <input type='hidden' name='location' value='completed.php'>
+                                        <input type='hidden' name='task_id' value='{$line['task_id']}'>
+                                        <div class='task_name'>
+                                            <label for='task_name'>Task name:</label>
+                                            <textarea name='task_name' required>{$line['task_name']}</textarea>
+                                        </div>
+                                        <div class='task_desc'>
+                                            <label for='task_desc'>Task desc:</label>
+                                            <textarea name='task_desc'>{$line['task_desc']}</textarea>
+                                        </div>
+                                        <div class='not-textarea'>
+                                            <div class='task_due'>
+                                                <label for='task_due'>Task due date:</label>
+                                                <input type='date' name='task_due' value='{$line['task_due']}' required>
+                                            </div>
+                                            <div class='task_color'>
+                                                <label for='task_color'>Task color:</label>
+                                                <input type='color' name='task_color' value='{$line['task_color']}'>
+                                            </div>
+                                            <div class='task_status'>
+                                                <label for='task_status'>Task status:</label>
+                                                <select name='task_status' value='{$line['task_status']}'>
+                                                    <option value='Not Started'>Not Started</option>
+                                                    <option value='In Progress'>In Progress</option>
+                                                    <option value='Completed'>Completed</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class='button'><button type='submit'>Save Changes</button></div>
+                                    </form>
+                                </div>";
                             }
                         ?> 
                     </table>

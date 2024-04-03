@@ -20,6 +20,9 @@
     if (0 == strlen($username)) {   // No username entered
         $messages[] = "Please enter a username.";
     }
+    else if (64 < strlen($username)) {
+        $messages[] = "Username is too long.";
+    }
     else if ($dao->usernameExists($username)) {
         $messages[] = "Username taken. Try again.";
     }
@@ -27,6 +30,12 @@
     // No password entered
     if (0 == strlen($password)) {
         $messages[] = "Please enter a password.";
+    }
+    else if (7 > strlen($password)) {
+        $messages[] = "Password is not long enough.";
+    }
+    else if (128 > strlen($password)) {
+        $messages[] = "Password is too long.";
     }
     else if ($password !== $reenter_password) {
         $messages[] = "Passwords do not match.";

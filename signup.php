@@ -53,7 +53,7 @@
                             </div>
                             <div>
                                 <label for="signup-pw">Password:</label>
-                                <input type="password" placeholder="Enter Password" id="signup-pw" name="signup-pw">
+                                <input type="password" placeholder="Enter Password (7+ characters)" id="signup-pw" name="signup-pw">
                             </div>
                             <div>
                                 <label for="signup-reenter-pw">Re-enter Password:</label>
