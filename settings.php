@@ -19,21 +19,29 @@
                         $user_info = $dao->getUserInfo($_SESSION['username']);
                         echo    "<div class='display-pfp'>
                                     <img src='". $user_info[0]['pfp_link']."'>
+                                    <button onClick='openUpdatePFP()'>&#x1F589</button>
                                     <div id='update-pfp'>
-                                        <button>&#x1F589</button>
+                                        <form method='post' action='settings/profile-image-update_handler.php'>
+                                            <label for='pfp-image'>Pick a Profile Image</label>
+                                            <select name='pfp-image'>
+                                                <option>insert something</option>
+                                            </select>
+                                            <button type='submit'>Save Changes</button>
+                                        </form>
+                                        <button onClick='closeUpdatePFP()'>Cancel</button>
                                     </div>
                                 </div>
                                 <div class='display-user-info'>
-                                    <div class='display un'>Username: " . 
+                                    <div id='display un'>Username: " . 
                                         $user_info[0]['username'] . 
                                     "</div>";
-                        echo        "<div class='display email'>
+                        echo        "<div id='display email'>
                                         E-mail: " . $user_info[0]['email'] . 
                                     "</div>
                                     <div id='update email'>
                                         <button>&#x1F589</button>
                                     </div> 
-                                    <div class='display pw'>
+                                    <div id='display pw'>
                                         Password: "; 
                                         foreach(str_split($user_info[0]['password']) as $char) {
                                             echo '&#8226';

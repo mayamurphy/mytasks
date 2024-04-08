@@ -62,3 +62,9 @@
     display: inline-flex;
     padding-top: 5px;
 }
+
+#update-pfp {
+    display: none;
+    height: 100px;
+    width: 100%;
+}

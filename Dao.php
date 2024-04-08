@@ -69,6 +69,23 @@
         $this->logger->LogInfo("addUser: [{$username}], [{$email}], [{$password}]");
     }
 
+    public function deleteUser($user_id) {
+        // delete all of user's tasks
+        $allTasks = $this->getAllTasks($user_id)[0];
+        foreach($allTasks['task_id'] as $task_id) {
+            $this->deleteTask($task_id);
+        }
+
+        // delete user
+        $conn = $this->getConnection();
+        $saveQuery = "DELETE FROM users WHERE user_id = :user_id";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":user_id",$user_id);
+        $q->execute();
+
+        $this->logger->LogInfo("deleteUser: [{$user_id}]");
+    }
+
     public function usernameExists($username) {
         $this->logger->LogInfo("usernameExists: [{$username}]");
         $conn = $this->getConnection();
@@ -254,5 +271,6 @@
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":task_id",$task_id);
         $q->execute();
+        $this->logger->LogInfo("deleteTask: [{$task_id}]");
     }
   }
