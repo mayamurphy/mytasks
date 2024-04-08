@@ -34,7 +34,7 @@
     else if (7 > strlen($password)) {
         $messages[] = "Password is not long enough.";
     }
-    else if (128 > strlen($password)) {
+    else if (128 < strlen($password)) {
         $messages[] = "Password is too long.";
     }
     else if ($password !== $reenter_password) {
