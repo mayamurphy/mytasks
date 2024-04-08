@@ -27,19 +27,13 @@
                                     "</div>";
                         echo        "<div id='display email'>
                                         E-mail: " . $user_info[0]['email'] . 
-                                    "</div>
-                                    <div id='update email'>
-                                        <button>&#x1F589</button>
-                                    </div> 
+                                    "   <button><a href='#'>&#x1F589</a></button></div>
                                     <div id='display pw'>
                                         Password: "; 
                                         for ($x = 0; $x <= 7; $x++) {
                                             echo '&#8226';
                                         }
-                        echo        "</div>
-                                    <div id='update pw'>
-                                        <button>&#x1F589</button>
-                                    </div> 
+                        echo        "   <button><a href='#'>&#x1F589</a></button></div>
                                 </div>";
                     ?>
                 </div>

@@ -142,10 +142,4 @@
                             }
                         ?> 
                     </table>
-                </div>
-            </div>
-            <?php require_once "progress_bar_and_calendar.php"?>
-        </div>
-        <?php require_once "footer.php" ?>
-    </body>
-</html>
+                    <?php require_once 'main_content_footer.php'?>

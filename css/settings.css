@@ -45,6 +45,7 @@ button a {
 }
 
 .display-pfp button {
+    margin: -25px;
     float: right;
 }
 
@@ -59,10 +60,15 @@ button a {
 
 .display-user-info {
     width: 400px;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-inline: auto;
 
     text-align: center;
+}
+
+.display-user-info div {
+    height: fit-content;
+    margin-bottom: 10px;
 }
 
 #display-un {
