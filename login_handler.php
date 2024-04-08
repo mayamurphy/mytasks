@@ -38,9 +38,12 @@
         exit();
     }
     else {
+        $userinfo = $dao->getUserInfo($username)[0];
+
         $_SESSION['authenticated'] = "authenticated";
         $_SESSION['username'] = $username;
-        $_SESSION['user_id'] = $dao->getUserInfo($username)[0]['user_id'];
+        $_SESSION['user_id'] = $userinfo['user_id'];
+        $_SESSION['user_pfp_link'] = $userinfo['pfp_link'];
         
         header('Location: todo.php');
         exit();

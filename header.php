@@ -23,7 +23,6 @@
         <link id="header-pfp" rel="icon" type="image/png" href="images/mytasks.png"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script type="text/javascript" src="js\edit-task-form.js"></script>
-        <script type="text/javascript" src="js\settings.js"></script>
     </head>
     <body>
       <div class="header">
@@ -32,7 +31,7 @@
               <p>Welcome <?php echo $_SESSION['username'] ?>!</p>
           </div>
           <div class="user-dropdown">
-              <img src="images/Default_pfp.png" alt="default profile picture">
+              <img src="<?php echo $_SESSION['user_pfp_link']?>" alt="user profile picture">
               <div class="dropdown-content">
                   <a href="settings.php">Settings</a>
                   <a href="logout.php">Log out</a>

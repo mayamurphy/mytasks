@@ -19,20 +19,10 @@
                         $user_info = $dao->getUserInfo($_SESSION['username']);
                         echo    "<div class='display-pfp'>
                                     <img src='". $user_info[0]['pfp_link']."'>
-                                    <button onClick='openUpdatePFP()'>&#x1F589</button>
-                                    <div id='update-pfp'>
-                                        <form method='post' action='settings/profile-image-update_handler.php'>
-                                            <label for='pfp-image'>Pick a Profile Image</label>
-                                            <select name='pfp-image'>
-                                                <option>insert something</option>
-                                            </select>
-                                            <button type='submit'>Save Changes</button>
-                                        </form>
-                                        <button onClick='closeUpdatePFP()'>Cancel</button>
-                                    </div>
+                                    <button><a href='settings/update_pfp.php'>&#x1F589</a></button>
                                 </div>
                                 <div class='display-user-info'>
-                                    <div id='display un'>Username: " . 
+                                    <div id='display-un'>Username: " . 
                                         $user_info[0]['username'] . 
                                     "</div>";
                         echo        "<div id='display email'>
@@ -43,7 +33,7 @@
                                     </div> 
                                     <div id='display pw'>
                                         Password: "; 
-                                        foreach(str_split($user_info[0]['password']) as $char) {
+                                        for ($x = 0; $x <= 7; $x++) {
                                             echo '&#8226';
                                         }
                         echo        "</div>

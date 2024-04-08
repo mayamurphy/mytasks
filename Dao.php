@@ -56,6 +56,9 @@
 
     /* user stuff */
     public function addUser($username, $email, $password) {
+        $options = ['cost' => 10,];
+        $password = password_hash($password, PASSWORD_BCRYPT, $options);
+
         $conn = $this->getConnection();
         $saveQuery = 
             "INSERT INTO users (username, email, password, pfp_link)
@@ -65,8 +68,6 @@
         $q->bindParam(":email",$email);
         $q->bindParam(":password",$password);
         $q->execute();
-
-        $this->logger->LogInfo("addUser: [{$username}], [{$email}], [{$password}]");
     }
 
     public function deleteUser($user_id) {
@@ -94,10 +95,9 @@
     }
 
     public function validUserPassword($username, $password) {
-        $this->logger->LogInfo("validUserPassword: [{$username}], [{$password}]");
         $conn = $this->getConnection();
         $res = $conn->query("SELECT password FROM users WHERE username = '{$username}';")->fetchAll(PDO::FETCH_ASSOC);
-        return $res[0]['password'] === $password ? true : false;;
+        return password_verify($password, $res[0]['password']);
     }
 
     public function getUserInfo($username) {
@@ -105,8 +105,15 @@
         return $conn->query("SELECT * FROM users WHERE username = '{$username}'")->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function updateUserInfo($user_id, $new_email, $new_password, $new_pfp_link) {
-
+    public function updateUserPFP($username, $pfp_link) {
+        $conn = $this->getConnection();
+        $saveQuery = "UPDATE users
+                        SET pfp_link = :pfp_link
+                        WHERE username = :username";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":username",$username);
+        $q->bindParam(":pfp_link",$pfp_link);
+        $q->execute();
     }
 
     /* get tasks */
