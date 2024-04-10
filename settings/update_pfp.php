@@ -3,7 +3,6 @@
         <title>Change Profile Picture</title>
     </head>
     <?php
-        // session_start(); 
         require_once 'settings_header.php'
     ?>
     <div class='update-pfp-content'>

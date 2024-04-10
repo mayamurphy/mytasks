@@ -39,7 +39,7 @@
                             <div>
                                 <label for="login-un">Username:</label>
                                 <input type="text" placeholder="Enter Username" id="login-un" name="login-un"
-                                    value="<?php echo isset($_SESSION['inputs']['login-un']) ? $_SESSION['inputs']['login-un'] : ""; ?>">
+                                    value="<?php echo isset($_SESSION['inputs']['login-un']) ? htmlspecialchars($_SESSION['inputs']['login-un']) : ""; ?>">
                             </div>
                             <div>
                                 <label for="login-pw">Password:</label>

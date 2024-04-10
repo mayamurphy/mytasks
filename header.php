@@ -28,7 +28,7 @@
       <div class="header">
           <div class="header-logo"><img src="images/mytasks logo.png"/></div>
           <div class="welcome-username">
-              <p>Welcome <?php echo $_SESSION['username'] ?>!</p>
+              <p>Welcome <?php echo htmlspecialchars($_SESSION['username']) ?>!</p>
           </div>
           <div class="user-dropdown">
               <img src="<?php echo $_SESSION['user_pfp_link']?>" alt="user profile picture">

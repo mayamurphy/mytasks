@@ -105,6 +105,28 @@
         return $conn->query("SELECT * FROM users WHERE username = '{$username}'")->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function updateUserEmail($username, $email) {
+        $conn = $this->getConnection();
+        $saveQuery = "UPDATE users
+                        SET email = :email
+                        WHERE username = :username";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":username",$username);
+        $q->bindParam(":email",$email);
+        $q->execute();
+    }
+
+    public function updateUserPassword($username, $password) {
+        $conn = $this->getConnection();
+        $saveQuery = "UPDATE users
+                        SET password = :password
+                        WHERE username = :username";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":username",$username);
+        $q->bindParam(":password",$password);
+        $q->execute();
+    }
+
     public function updateUserPFP($username, $pfp_link) {
         $conn = $this->getConnection();
         $saveQuery = "UPDATE users

@@ -31,16 +31,16 @@
                             <form id="add-task-form" method="post" action="add_task_handler.php">
                                 <input type="hidden" name="location" value="todo.php">
                                 <td id="tt-name"><input type="text" name="task_name" id="task_name"
-                                    value="<?php echo isset($_SESSION['inputs']['task_name']) ? $_SESSION['inputs']['task_name'] : ""; ?>" required></td>
+                                    value="<?php echo isset($_SESSION['inputs']['task_name']) ? htmlspecialchars($_SESSION['inputs']['task_name']) : ""; ?>" required></td>
                                 <td id="tt-desc"><input type="text" name="task_desc" id="task_desc"
-                                    value="<?php echo isset($_SESSION['inputs']['task_desc']) ? $_SESSION['inputs']['task_desc'] : ""; ?>"></td>
+                                    value="<?php echo isset($_SESSION['inputs']['task_desc']) ? htmlspecialchars($_SESSION['inputs']['task_desc']) : ""; ?>"></td>
                                 <td id="tt-due"><input type="date" name="task_due" id="task_due" 
-                                    value="<?php echo isset($_SESSION['inputs']['task_due']) ? $_SESSION['inputs']['task_due'] : date('Y-m-d')?>" required></td>
+                                    value="<?php echo isset($_SESSION['inputs']['task_due']) ? htmlspecialchars($_SESSION['inputs']['task_due']) : date('Y-m-d')?>" required></td>
                                 <td id="tt-color"><input type="color" name="task_color" id="task_color"
-                                    value="<?php echo isset($_SESSION['inputs']['task_color']) ? $_SESSION['inputs']['task_color'] : "#000000"; ?>"></td>
+                                    value="<?php echo isset($_SESSION['inputs']['task_color']) ? htmlspecialchars($_SESSION['inputs']['task_color']) : "#000000"; ?>"></td>
                                 <td id="tt-status">
                                     <select name="task_status"
-                                        value="<?php echo isset($_SESSION['inputs']['task_status']) ? $_SESSION['inputs']['task_status'] : "Not Started"; ?>">
+                                        value="<?php echo isset($_SESSION['inputs']['task_status']) ? htmlspecialchars($_SESSION['inputs']['task_status']) : "Not Started"; ?>">
                                         <option value="Not Started">Not Started</option>
                                         <option value="In Progress">In Progress</option>
                                         <option value="Completed">Completed</option>
@@ -65,11 +65,11 @@
                                             </form>
                                         </div>
                                     </td>
-                                    <td id='tt-name'>{$line['task_name']}</td>
-                                    <td id='tt-desc'>{$line['task_desc']}</td>
-                                    <td id='tt-due'>{$line['task_due']}</td>
-                                    <td id='tt-color'>{$line['task_color']}</td>
-                                    <td id='tt-status'>{$line['task_status']}</td>
+                                    <td id='tt-name'>" . htmlspecialchars($line['task_name']) . "</td>
+                                    <td id='tt-desc'>" . htmlspecialchars($line['task_desc']) . "</td>
+                                    <td id='tt-due'>" . htmlspecialchars($line['task_due']) . "</td>
+                                    <td id='tt-color'>" . htmlspecialchars($line['task_color']) . "</td>
+                                    <td id='tt-status'>" . htmlspecialchars($line['task_status']) . "</td>
                                     <td id='tt-placeholder'>
                                         <div class='task-dropdown'>
                                             <div class='task-dropdown-vert-dots'>
@@ -103,32 +103,32 @@
                                         <div class='task_name'>
                                             <label for='task_name'>Task name:</label>
                                             <textarea name='task_name'>";
-                                            echo isset($_SESSION['inputs']['task_name']) ? $_SESSION['inputs']['task_name'] : $line['task_name'];
+                                            echo isset($_SESSION['inputs']['task_name']) ? htmlspecialchars($_SESSION['inputs']['task_name']) : htmlspecialchars($line['task_name']);
                                 echo        "</textarea>
                                         </div>
                                         <div class='task_desc'>
                                             <label for='task_desc'>Task desc:</label>
                                             <textarea name='task_desc'>";
-                                            echo isset($_SESSION['inputs']['task_desc']) ? $_SESSION['inputs']['task_desc'] : $line['task_desc'];
+                                            echo isset($_SESSION['inputs']['task_desc']) ? htmlspecialchars($_SESSION['inputs']['task_desc']) : htmlspecialchars($line['task_desc']);
                                 echo        "</textarea>
                                         </div>
                                         <div class='not-textarea'>
                                             <div class='task_due'>
                                                 <label for='task_due'>Task due date:</label>
                                                 <input type='date' name='task_due' value='";
-                                                echo isset($_SESSION['inputs']['task_due']) ? $_SESSION['inputs']['task_due'] : $line['task_due'];
+                                                echo isset($_SESSION['inputs']['task_due']) ? htmlspecialchars($_SESSION['inputs']['task_due']) : htmlspecialchars($line['task_due']);
                                 echo            "' required>
                                             </div>
                                             <div class='task_color'>
                                                 <label for='task_color'>Task color:</label>
                                                 <input type='color' name='task_color' value='";
-                                                echo isset($_SESSION['inputs']['task_color']) ? $_SESSION['inputs']['task_color'] : $line['task_color'];
+                                                echo isset($_SESSION['inputs']['task_color']) ? htmlspecialchars($_SESSION['inputs']['task_color']) : htmlspecialchars($line['task_color']);
                                 echo            "'>
                                             </div>
                                             <div class='task_status'>
                                                 <label for='task_status'>Task status:</label>
                                                 <select name='task_status' value='";
-                                                echo isset($_SESSION['inputs']['task_color']) ? $_SESSION['inputs']['task_color'] : $line['task_color'];
+                                                echo isset($_SESSION['inputs']['task_color']) ? htmlspecialchars($_SESSION['inputs']['task_status']) : htmlspecialchars($line['task_status']);
                                 echo            "'>
                                                     <option value='Not Started'>Not Started</option>
                                                     <option value='In Progress'>In Progress</option>

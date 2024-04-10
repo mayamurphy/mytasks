@@ -23,10 +23,10 @@
                                 </div>
                                 <div class='display-user-info'>
                                     <div id='display-un'>Username: " . 
-                                        $user_info[0]['username'] . 
+                                        htmlspecialchars($user_info[0]['username']) . 
                                     "</div>";
                         echo        "<div id='display email'>
-                                        E-mail: " . $user_info[0]['email'] . 
+                                        E-mail: " . htmlspecialchars($user_info[0]['email']) . 
                                     "   <button><a href='#'>&#x1F589</a></button></div>
                                     <div id='display pw'>
                                         Password: "; 
