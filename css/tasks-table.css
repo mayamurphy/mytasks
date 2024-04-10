@@ -89,11 +89,13 @@ tr {
     width: 120px;
     text-align: center;
     padding-left: 10px;
+    cursor: pointer;
 }
 
 #tt-color, #tt-color input {
     width: 80px;
     text-align: center;
+    cursor: pointer;
 }
 
 #tt-status {
@@ -111,10 +113,12 @@ tr {
 
 #add-task-button:hover {
     background-color: #0BDA51;
+    cursor: pointer;
 }
 
 .mark-completed button {
     border-radius: 100%;
+    cursor: pointer;
 }
 
 .task-dropdown {
