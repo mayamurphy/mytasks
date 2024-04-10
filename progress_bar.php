@@ -3,7 +3,7 @@
             </head>
             <div class="progress-bar-and-more">
                 <div class="progress-bar-container">
-                    <h2>Today's Progress:</h2>
+                    <h3>Today's Progress:</h3>
                     <div class="progress-bar">
                         <div id="progress">
                             <div id="progress-percent">

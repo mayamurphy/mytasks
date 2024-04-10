@@ -40,4 +40,4 @@
     
     $dao->saveTask($_SESSION['user_id'], $task_name, $task_desc, $task_due, $task_color, $task_status, $task_completed_date);
     header('Location: ' . $location);
-    exit;
+    exit();
