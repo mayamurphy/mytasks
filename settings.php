@@ -27,16 +27,17 @@
                                     "</div>";
                         echo        "<div id='display email'>
                                         E-mail: " . htmlspecialchars($user_info[0]['email']) . 
-                                    "   <button><a href='#'>&#x1F589</a></button></div>
+                                    "   <button><a href='settings/update_email.php'>&#x1F589</a></button></div>
                                     <div id='display pw'>
                                         Password: "; 
                                         for ($x = 0; $x <= 7; $x++) {
                                             echo '&#8226';
                                         }
-                        echo        "   <button><a href='#'>&#x1F589</a></button></div>
+                        echo        "   <button><a href='settings/update_password.php'>&#x1F589</a></button></div>
                                 </div>";
                     ?>
                 </div>
+                <div class="delete-account-button"><button><a href="settings/delete_account.php">Delete Account</a></button></div>
             </div>
         </div>
         <?php require_once "footer.php" ?>

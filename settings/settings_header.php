@@ -3,7 +3,7 @@
     session_start();
     if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
     } else {
-      header("Location: login.php");
+      header("Location: ../login.php");
       exit();
     }
 ?>
@@ -12,13 +12,9 @@
         <link rel="stylesheet" href="../css/header.css"/>
         <link rel="stylesheet" href="../css/footer.css"/>
         <link rel="stylesheet" href="../css/main-content.css"/>
-        <link rel="stylesheet" href="../css/tasks-table.css"/>
-        <link rel="stylesheet" href="../css/progress-bar-style.php"/>
         <link rel="stylesheet" href="../css/settings.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono"/>
         <link id="header-pfp" rel="icon" type="image/png" href="../images/mytasks.png"/>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script type="text/javascript" src="../js/edit-task-form.js"></script>
     </head>
     <body>
       <div class="header">
@@ -44,5 +40,8 @@
                 </ol>
             </div>
             <div class="settings">
-                <h1>ACCOUNT SETTINGS</h1>
-                <hr>
+                <div class='back-to-settings'>
+                    <button><a href="../settings.php">< Back</a></button>
+                    <h1>ACCOUNT SETTINGS</h1>
+                    <hr>
+                </div>

@@ -5,8 +5,7 @@
     <?php
         require_once 'settings_header.php'
     ?>
-    <div class='update-pfp-content'>
-        <!-- <div class='update-pfp-back'><button>< Back</button></div> -->
+    <div class='update-content'>
         <h2>Change Profile Picture</h2>
         <div class='display-pfp'>
             <img src='../<?php echo $_SESSION['user_pfp_link']?>'>

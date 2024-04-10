@@ -4,10 +4,6 @@
 
     margin: 10px;
     padding: 5px;
-    
-    /* border-radius: 10px;
-    border-style: solid;
-    border-width: 2px; */
 }
 
 .settings h1 {
@@ -71,7 +67,11 @@ button a {
     margin-bottom: 10px;
 }
 
-#display-un {
+#display-un,
+#display-email {
+    width: fit-content;
+    margin-inline: auto;
+
     color: #636363;
 }
 
@@ -79,11 +79,7 @@ button a {
     padding: 5px;
 }
 
-.update-pfp-back {
-    padding: 5px;
-}
-
-.update-pfp-content h2 {
+.update-content h2 {
     padding: 10px;
     text-align: center;
 }
@@ -120,7 +116,73 @@ button a {
     border-radius: 100%;
 }
 
-.update-pfp-button {
+.back-to-settings button {
+    float: left;
+}
+
+.back-to-settings button {
+    color: #000000;
+
+    background-color: transparent;
+    border-color: transparent;
+
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.back-to-settings button:hover {
+    color: #ffffff;
+}
+
+.update-pfp-button,
+.update-email form,
+.update-email-button,
+.update-password form,
+.update-password-button,
+.delete-account form,
+.delete-account-button {
     width: fit-content;
     margin-inline: auto;
+}
+
+.update-pfp-button button,
+.update-email-button button,
+.update-password-button button,
+.delete-account button,
+.delete-account-button button {
+    background-color: #abbdce;
+    border-color: black;
+    border-radius: 40px;
+    height: 40px;
+    width: fit-content;
+    padding: 0 5px 0 5px;
+    cursor: pointer;
+}
+
+.update-pfp-button button:hover,
+.update-email-button button:hover,
+.update-password-button button:hover {
+    background-color: #0BDA51;
+    cursor: pointer;
+}
+
+.delete-account button:hover,
+.delete-account-button button:hover {
+    background-color: #ff0000;
+    cursor: pointer;
+}
+
+.update-email input,
+.update-password input,
+.delete-account input {
+    height: 2em;
+    width: 300px;
+    padding-left: 5px;
+    margin: 5px;
+    border-radius: 40px;
+}
+
+.message {
+    color: #ff0000;
+    text-align: center;
 }

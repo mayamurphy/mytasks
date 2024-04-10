@@ -71,10 +71,12 @@
     }
 
     public function deleteUser($user_id) {
+        $this->logger->LogInfo("deleteUser: [{$user_id}]");
+
         // delete all of user's tasks
-        $allTasks = $this->getAllTasks($user_id)[0];
-        foreach($allTasks['task_id'] as $task_id) {
-            $this->deleteTask($task_id);
+        $allTasks = $this->getAllTasks($user_id);
+        foreach($allTasks as $task) {
+            $this->deleteTask($task['task_id']);
         }
 
         // delete user
@@ -83,8 +85,6 @@
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":user_id",$user_id);
         $q->execute();
-
-        $this->logger->LogInfo("deleteUser: [{$user_id}]");
     }
 
     public function usernameExists($username) {
@@ -117,6 +117,9 @@
     }
 
     public function updateUserPassword($username, $password) {
+        $options = ['cost' => 10,];
+        $password = password_hash($password, PASSWORD_BCRYPT, $options);
+        
         $conn = $this->getConnection();
         $saveQuery = "UPDATE users
                         SET password = :password

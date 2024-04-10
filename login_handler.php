@@ -44,7 +44,6 @@
         $_SESSION['username'] = $username;
         $_SESSION['user_id'] = $userinfo['user_id'];
         $_SESSION['user_pfp_link'] = $userinfo['pfp_link'];
-        
         header('Location: todo.php');
         exit();
     }
