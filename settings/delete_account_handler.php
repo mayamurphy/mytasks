@@ -21,7 +21,7 @@
         exit();
     }
     else {
-        $dao->deleteUser($_SESSION['user_id'], $confirm_username);
+        $dao->deleteUser($_SESSION['user_id']);
         header('Location: ../logout.php');
         exit();
     }
