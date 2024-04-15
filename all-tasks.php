@@ -68,7 +68,7 @@
                                     <td id='tt-name'>" . htmlspecialchars($line['task_name']) . "</td>
                                     <td id='tt-desc'>" . htmlspecialchars($line['task_desc']) . "</td>
                                     <td id='tt-due'>" . htmlspecialchars($line['task_due']) . "</td>
-                                    <td id='tt-color'>" . htmlspecialchars($line['task_color']) . "</td>
+                                    <td id='tt-color'><div id='display-color' style='background-color:" . htmlspecialchars($line['task_color']) . "'></div></td>
                                     <td id='tt-status'>" . htmlspecialchars($line['task_status']) . "</td>
                                     <td id='tt-placeholder'>
                                         <div class='task-dropdown'>
@@ -79,7 +79,7 @@
                                             </div>
                                             <div class='task-dropdown-content'>
                                                 <div class='edit-task'>
-                                                    <button type='button' onClick='editTaskForm()'>Edit</button>
+                                                    <button type='button' onClick='openEditTaskForm({$line['task_id']})'>Edit</button>
                                                 </div>
                                                 <div class='delete-task'>
                                                     <form method='post' action='delete_task_handler.php'>
@@ -92,10 +92,10 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <div id='edit-task-form'>
+                                <div class='edit-task-form' id='{$line['task_id']}'>
                                     <div class='top-of-form'>
                                         <h2>Edit task</h2>
-                                        <button onClick='closeEditTaskForm()'>Close X</button>
+                                        <button onClick='closeEditTaskForm({$line['task_id']})'>Close X</button>
                                     </div>
                                     <form method='post' action='task_edit_handler.php'>
                                         <input type='hidden' name='location' value='all-tasks.php'>

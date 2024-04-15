@@ -1,9 +1,9 @@
-function openEditTaskForm() {
-    var form = document.getElementById('edit-task-form');
+function openEditTaskForm(id) {
+    var form = document.getElementById(id);
     form.style.display = "inline-block";
 };
 
-function closeEditTaskForm() {
-    document.getElementById('edit-task-form').style.display = "none";
+function closeEditTaskForm(id) {
+    document.getElementById(id).style.display = "none";
     location.reload();
 }

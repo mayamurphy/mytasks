@@ -104,6 +104,17 @@ tr {
     width: 110px;
 }
 
+#display-color {
+    height: 20px;
+    width: 60px;
+    margin-inline: auto;
+
+    border-radius: 40px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 2px;
+}
+
 #add-task-button {
     height: 25px;
     width: 25px;
@@ -168,7 +179,7 @@ tr {
     background-color: #6082B6;
 }
 
-#edit-task-form {
+.edit-task-form {
     display: none;
     position: fixed;
     height: 450px;
@@ -186,11 +197,11 @@ tr {
     z-index: 10;
 }
 
-#edit-task-form div {
+.edit-task-form div {
     padding: 10px;
 }
 
-#edit-task-form textarea {
+.edit-task-form textarea {
     height: 90px;
     width: 98%;
 
