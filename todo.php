@@ -66,7 +66,7 @@
                                     </td>
                                     <td id='tt-name'>" . htmlspecialchars($line['task_name']) . "</td>
                                     <td id='tt-desc'>" . htmlspecialchars($line['task_desc']) . "</td>
-                                    <td id='tt-due'>" . htmlspecialchars($line['task_due']) . "</td>
+                                    <td id='tt-due'>" . date('m-d-Y',strtotime($line['task_due'])) . "</td>
                                     <td id='tt-color'><div id='display-color' style='background-color:" . htmlspecialchars($line['task_color']) . "'></div></td>
                                     <td id='tt-status'>" . htmlspecialchars($line['task_status']) . "</td>
                                     <td id='tt-placeholder'>
