@@ -127,12 +127,19 @@
                                             </div>
                                             <div class='task_status'>
                                                 <label for='task_status'>Task status:</label>
-                                                <select name='task_status' value='";
-                                                echo isset($_SESSION['inputs']['task_color']) ? htmlspecialchars($_SESSION['inputs']['task_status']) : htmlspecialchars($line['task_status']);
-                                echo            "'>
-                                                    <option value='Not Started'>Not Started</option>
-                                                    <option value='In Progress'>In Progress</option>
-                                                    <option value='Completed'>Completed</option>
+                                                <select name='task_status'>
+                                                    <option value='Not Started' ";
+                                                    echo (isset($_SESSION['inputs']['task_status']) && ("Not Started" == $_SESSION['inputs']['task_status'])) ? "selected"
+                                                                    : ("Not Started" == htmlspecialchars($line['task_status']) ? "selected": "");
+                                                    echo ">Not Started</option>
+                                                    <option value='In Progress' ";
+                                                    echo (isset($_SESSION['inputs']['task_status']) && ("In Progress" == $_SESSION['inputs']['task_status'])) ? "selected"
+                                                                    : ("In Progress" == htmlspecialchars($line['task_status']) ? "selected": "");
+                                                    echo ">In Progress</option>
+                                                    <option value='Completed' ";
+                                                    echo (isset($_SESSION['inputs']['task_status']) && ("Completed" == $_SESSION['inputs']['task_status'])) ? "selected"
+                                                                    : ("Completed" == htmlspecialchars($line['task_status']) ? "selected": "");
+                                                    echo ">Completed</option>
                                                 </select>
                                             </div>
                                         </div>
