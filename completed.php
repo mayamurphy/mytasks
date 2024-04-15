@@ -79,7 +79,7 @@
                                             </div>
                                             <div class='task-dropdown-content'>
                                                 <div class='edit-task'>
-                                                    <button type='button' onClick='editTaskForm()'>Edit</button>
+                                                    <button type='button' onClick='openEditTaskForm({$line['task_id']})'>Edit</button>
                                                 </div>
                                                 <div class='delete-task'>
                                                     <form method='post' action='delete_task_handler.php'>
