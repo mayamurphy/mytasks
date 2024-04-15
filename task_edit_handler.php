@@ -17,8 +17,8 @@
 
     $dao = new Dao();
 
-    if (0 === strlen($task_name)) {
-        $messages[] = "Please enter a name.";
+    if (0 == strlen($task_name)) {
+        $messages[] = "Please enter a task name.";
     }
 
     $pieces = explode("-", $task_due);
@@ -39,28 +39,29 @@
     if (0 < count($messages)) {
         $_SESSION['messages'] = $messages;
         $_SESSION['inputs'] = $_POST;
-    }
+    } 
+    else {
+        $oldTask = $dao->getTask($user_id, $task_id)[0];
+        if ($oldTask['task_name'] !== $task_name) {
+            $dao->updateTaskName($user_id, $task_id, $task_name);
+        }
 
-    $oldTask = $dao->getTask($user_id, $task_id)[0];
-    if ($oldTask['task_name'] !== $task_name) {
-        $dao->updateTaskName($user_id, $task_id, $task_name);
-    }
+        if ($oldTask['task_desc'] !== $task_desc) {
+            $dao->updateTaskDesc($user_id, $task_id, $task_desc);
+        }
 
-    if ($oldTask['task_desc'] !== $task_desc) {
-        $dao->updateTaskDesc($user_id, $task_id, $task_desc);
-    }
+        if ($oldTask['task_due'] !== $task_due) {
+            $dao->updateTaskDueDate($user_id, $task_id, $task_due);
+        }
 
-    if ($oldTask['task_due'] !== $task_due) {
-        $dao->updateTaskDueDate($user_id, $task_id, $task_due);
-    }
+        if ($oldTask['task_color'] !== $task_color) {
+            $dao->updateTaskColor($user_id, $task_id, $task_color);
+        }
 
-    if ($oldTask['task_color'] !== $task_color) {
-        $dao->updateTaskColor($user_id, $task_id, $task_color);
-    }
-
-    if ($oldTask['task_status'] !== $task_status) {
-        $dao->updateTaskStatus($user_id, $task_id, $task_status, $task_completed_date);
+        if ($oldTask['task_status'] !== $task_status) {
+            $dao->updateTaskStatus($user_id, $task_id, $task_status, $task_completed_date);
+        }
     }
 
     header('Location: ' . $location);
-    exit;
+    exit();

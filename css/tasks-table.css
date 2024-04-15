@@ -89,12 +89,14 @@ tr {
     width: 120px;
     text-align: center;
     padding-left: 10px;
-    cursor: pointer;
 }
 
 #tt-color, #tt-color input {
     width: 80px;
     text-align: center;
+}
+
+#tt-due input, #tt-color input {
     cursor: pointer;
 }
 

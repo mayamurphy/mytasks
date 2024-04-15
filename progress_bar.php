@@ -1,3 +1,4 @@
+<!DOCTYPE html>
             <head>
                 <link rel="stylesheet" href="progress-bar-style.php"/>
             </head>
@@ -11,8 +12,5 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    
                 </div>
             </div>

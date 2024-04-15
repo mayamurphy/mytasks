@@ -232,17 +232,17 @@
         $this->logger->LogInfo("updateTaskDesc: [{$task_id}], [{$new_task_desc}]");
     }
 
-    public function updateTaskDueDate($user_id, $task_id, $new_task_due_date) {
+    public function updateTaskDueDate($user_id, $task_id, $new_task_due) {
         $conn = $this->getConnection();
         $saveQuery = "UPDATE tasks
-                        SET task_due_date = :new_task_due_date
+                        SET task_due = :new_task_due
                         WHERE task_id = :task_id AND user_id = :user_id";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":task_id",$task_id);
         $q->bindParam(":user_id",$user_id);
-        $q->bindParam(":new_task_due_date",$new_task_due_date);
+        $q->bindParam(":new_task_due",$new_task_due);
         $q->execute();
-        $this->logger->LogInfo("updateTaskDueDate: [{$task_id}], [{$new_task_due_date}]");
+        $this->logger->LogInfo("updateTaskDueDate: [{$task_id}], [{$new_task_due}]");
     }
 
     public function updateTaskColor($user_id, $task_id, $new_task_color) {

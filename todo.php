@@ -39,9 +39,8 @@
                                 <td id="tt-color"><input type="color" name="task_color" id="task_color"
                                     value="<?php echo isset($_SESSION['inputs']['task_color']) ? htmlspecialchars($_SESSION['inputs']['task_color']) : "#000000"; ?>"></td>
                                 <td id="tt-status">
-                                    <select name="task_status"
-                                        value="<?php echo isset($_SESSION['inputs']['task_status']) ? htmlspecialchars($_SESSION['inputs']['task_status']) : "Not Started"; ?>">
-                                        <option value="Not Started">Not Started</option>
+                                    <select name="task_status">
+                                        <option value="Not Started" selected>Not Started</option>
                                         <option value="In Progress">In Progress</option>
                                         <option value="Completed">Completed</option>
                                     </select>
@@ -68,7 +67,7 @@
                                     <td id='tt-name'>" . htmlspecialchars($line['task_name']) . "</td>
                                     <td id='tt-desc'>" . htmlspecialchars($line['task_desc']) . "</td>
                                     <td id='tt-due'>" . htmlspecialchars($line['task_due']) . "</td>
-                                    <td id='tt-color'>" . htmlspecialchars($line['task_color']) . "</td>
+                                    <td id='tt-color' style='background-color:" . htmlspecialchars($line['task_color']) . "'></td>
                                     <td id='tt-status'>" . htmlspecialchars($line['task_status']) . "</td>
                                     <td id='tt-placeholder'>
                                         <div class='task-dropdown'>
@@ -79,7 +78,7 @@
                                             </div>
                                             <div class='task-dropdown-content'>
                                                 <div class='edit-task'>
-                                                    <button type='button' onClick='editTaskForm()'>Edit</button>
+                                                    <button type='button' onClick='openEditTaskForm()'>Edit</button>
                                                 </div>
                                                 <div class='delete-task'>
                                                     <form method='post' action='delete_task_handler.php'>
@@ -116,27 +115,35 @@
                                             <div class='task_due'>
                                                 <label for='task_due'>Task due date:</label>
                                                 <input type='date' name='task_due' value='";
-                                                echo isset($_SESSION['inputs']['task_due']) ? htmlspecialchars($_SESSION['inputs']['task_due']) : htmlspecialchars($line['task_due']);
+                                                echo htmlspecialchars($line['task_due']);
                                 echo            "' required>
                                             </div>
                                             <div class='task_color'>
                                                 <label for='task_color'>Task color:</label>
                                                 <input type='color' name='task_color' value='";
-                                                echo isset($_SESSION['inputs']['task_color']) ? htmlspecialchars($_SESSION['inputs']['task_color']) : htmlspecialchars($line['task_color']);
+                                                echo htmlspecialchars($line['task_color']);
                                 echo            "'>
                                             </div>
                                             <div class='task_status'>
                                                 <label for='task_status'>Task status:</label>
-                                                <select name='task_status' value='";
-                                                echo isset($_SESSION['inputs']['task_color']) ? htmlspecialchars($_SESSION['inputs']['task_status']) : htmlspecialchars($line['task_status']);
-                                echo            "'>
-                                                    <option value='Not Started'>Not Started</option>
-                                                    <option value='In Progress'>In Progress</option>
-                                                    <option value='Completed'>Completed</option>
+                                                <select name='task_status'>
+                                                    <option value='Not Started' ";
+                                                    echo (isset($_SESSION['inputs']['task_status']) && ("Not Started" == $_SESSION['inputs']['task_status'])) ? "selected"
+                                                                    : ("Not Started" == htmlspecialchars($line['task_status']) ? "selected": "");
+                                                    echo ">Not Started</option>
+                                                    <option value='In Progress' ";
+                                                    echo (isset($_SESSION['inputs']['task_status']) && ("In Progress" == $_SESSION['inputs']['task_status'])) ? "selected"
+                                                                    : ("In Progress" == htmlspecialchars($line['task_status']) ? "selected": "");
+                                                    echo ">In Progress</option>
+                                                    <option value='Completed' ";
+                                                    echo (isset($_SESSION['inputs']['task_status']) && ("Completed" == $_SESSION['inputs']['task_status'])) ? "selected"
+                                                                    : ("Completed" == htmlspecialchars($line['task_status']) ? "selected": "");
+                                                    echo ">Completed</option>
                                                 </select>
                                             </div>
-                                        </div>
-                                        <div class='button'><button type='submit'>Save Changes</button></div>
+                                        </div>";
+                                        if (isset($_SESSION['inputs'])) {unset($_SESSION['inputs']);}
+                                        echo "<div class='button'><button type='submit'>Save Changes</button></div>
                                     </form>
                                 </div>";
                             }
