@@ -1,5 +1,6 @@
 <?php
     require_once 'KLogger.php';
+    date_default_timezone_set("America/Boise");
 
     class Dao {
 
