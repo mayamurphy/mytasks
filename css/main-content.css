@@ -8,6 +8,21 @@
     font-family: "Oxygen Mono", monospace;
 }
 
+::-webkit-scrollbar {
+    height: inherit;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #004a8b;
+    border-radius: 10px;
+}
+
 .content {
     display: inline-flex;
     height: fit-content;

@@ -1,7 +1,9 @@
 .tasks-table {
     display: block;
     height: fit-content;
-    width: 100%;
+    width: 99%;
+
+    margin-inline: auto;
 
     border-style: none;
     border-width: 0;
@@ -41,54 +43,52 @@ tr {
     border-radius: 40px;
 }
 
-.add-task option {
-    border-radius: 100%;
-}
-
 #tt-placeholder {
     width: 5px;
 }
 
 #tt-name {
-    width: 200px;
-    max-width: 200px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-#tt-name input {
-    width: 180px;
+#tt-name input,
+#tt-desc input {
+    height: fit-content;
+    width: calc(100% - 10px);
 }
 
 #tt-name:hover {
+    min-width: 300px;
     overflow: visible;
     white-space: wrap;
+    overflow-wrap: break-word;
 }
 
 #tt-desc {
     width: 100%;
-    max-width: 250px;
-    min-width: 250px;
+    max-width: 300px;
+    min-width: 300px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-#tt-desc input {
-    width: calc(100% - 6px);
-}
-
 #tt-desc:hover {
-    min-width: 250px;
+    min-width: 300px;
     overflow: visible;
     white-space: wrap;
+    overflow-wrap: break-word;
 }
 
 #tt-due, #tt-due input {
-    width: 120px;
+    width: 110px;
     text-align: center;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 #tt-color, #tt-color input {
@@ -132,6 +132,10 @@ tr {
 .mark-completed button {
     border-radius: 100%;
     cursor: pointer;
+}
+
+.mark-completed button:hover {
+    background-color: #0BDA51;
 }
 
 .task-dropdown {
@@ -179,10 +183,25 @@ tr {
     background-color: #6082B6;
 }
 
+.task-dropdown-vert-dots button,
+.edit-task-form button {
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.task-dropdown-vert-dots button:hover,
+.edit-task-form button:hover {
+    cursor: pointer;
+}
+
+.edit-task-form button:hover {
+    background-color: #4a9ce6;
+}
+
 .edit-task-form {
     display: none;
     position: fixed;
-    height: 450px;
+    height: 500px;
     width: 700px;
 
     padding: 10px;
@@ -192,7 +211,7 @@ tr {
     border-style: groove;
     border-color: #000000;
 
-    background-color: #aeaeae;
+    background-color: #accd9c;
 
     z-index: 10;
 }
@@ -204,6 +223,9 @@ tr {
 .edit-task-form textarea {
     height: 90px;
     width: 98%;
+
+    border-radius: 10px;
+    padding: 5px;
 
     resize: none;
 
@@ -219,8 +241,16 @@ tr {
     right: 10px;
 }
 
+.top-of-form button:hover {
+    background-color: #c5c5c5;
+}
+
 .not-textarea {
     display: flex;
+}
+
+.not-textarea input {
+    border-radius: 10px;
 }
 
 .button {
