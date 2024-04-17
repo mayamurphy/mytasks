@@ -15,7 +15,7 @@
     $dao = new Dao();
 
     if (0 === strlen($task_name)) {
-        $messages[] = "Please enter a name.";
+        $messages[] = "Please enter a task name.";
     }
 
     $pieces = explode("-", $task_due);
@@ -36,8 +36,9 @@
     if (0 < count($messages)) {
         $_SESSION['messages'] = $messages;
         $_SESSION['inputs'] = $_POST;
+    } else {
+        $dao->saveTask($_SESSION['user_id'], $task_name, $task_desc, $task_due, $task_color, $task_status, $task_completed_date);
     }
     
-    $dao->saveTask($_SESSION['user_id'], $task_name, $task_desc, $task_due, $task_color, $task_status, $task_completed_date);
     header('Location: ' . $location);
     exit();
