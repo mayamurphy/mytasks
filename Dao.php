@@ -3,15 +3,15 @@
 
     class Dao {
 
-    private $host = "l9dwvv6j64hlhpul.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-    private $db = "rqbdbs0p9aoruwo7";
-    private $user = "ebpl0unrvz4jmcmu";
-    private $pass = "vuk0katccii0kcge";
+    // private $host = "l9dwvv6j64hlhpul.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    // private $db = "rqbdbs0p9aoruwo7";
+    // private $user = "ebpl0unrvz4jmcmu";
+    // private $pass = "vuk0katccii0kcge";
 
-    // private $host = "localhost";
-    // private $db = "mytasks";
-    // private $user = "root";
-    // private $pass = "";
+    private $host = "localhost";
+    private $db = "mytasks";
+    private $user = "root";
+    private $pass = "";
 
     protected $logger;
 
@@ -40,7 +40,7 @@
                         task_color VARCHAR(7) NOT NULL, 
                         task_status VARCHAR(12) NOT NULL, 
                         task_created_date DATE NOT NULL, 
-                        task_completed_date DATE NOT NULL,
+                        task_completed_date DATE,
                         FOREIGN KEY (user_id) REFERENCES users(user_id));";
         $q = $conn->prepare($tasks_table);
         $q->execute();

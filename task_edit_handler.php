@@ -34,6 +34,9 @@
         $task_completed_date = date('Y-m-d');
         $_SESSION['todays_progress'] = $dao->getTodaysProgress($_SESSION['user_id']);
     }
+    else {
+        $task_completed_date = null;
+    }
     
     /* print out messages */
     if (0 < count($messages)) {
