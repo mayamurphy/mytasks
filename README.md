@@ -25,6 +25,7 @@ production environment.**
 ![signup](./demo_images/mytasks_signup.png)
 ![todo_tab](./demo_images/mytasks_todo.png)
 ![task_edit_menu](./demo_images/mytasks_task_edit_menu.png)
+![task_edit_pop-up](./demo_images/mytasks_task_edit_pop-up.png)
 ![completed_tab](./demo_images/mytasks_completed.png)
 ![all_tab](./demo_images/mytasks_all.png)
 ![settings_menu](./demo_images/mytasks_user_menu.png)
